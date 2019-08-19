@@ -7,8 +7,8 @@ import { Link } from "@reach/router";
 /* --- Local Dependencies --- */
 import data from 'store/departments/data/actions'
 import { fromData } from 'store/departments/selectors'
-import { Box, Button, Flex, Heading, HorizontalRule, Paragraph, Span } from "atomic";
-import { Modal } from 'components'
+import { Box, ButtonFlat, Button, Flex, Heading, HorizontalRule, Paragraph, Span } from "atomic";
+import { Modal, Panel } from 'components'
 import { VerifiableCredentialBasic } from 'containers'
 
 import { FormVerifiableCredentialGenerate } from 'forms'
@@ -49,7 +49,7 @@ class VerifiableCredentialQuery extends React.Component {
   /* Did Update */
   componentDidUpdate()
   {
-    console.log(this.props, 'query')
+
   }
 
   /* Will Mount */
@@ -72,35 +72,6 @@ class VerifiableCredentialQuery extends React.Component {
     )
   }
 }
-
-const VerifiableCredentialTemplate = ({ alias, name, claim_fields, description, type }) =>
-
-<Flex between borderBottom='1px solid' borderColor='grayDark' py={20} align='center' width={1}>
-  <Box>
-    <Heading color='blue' fontSize={[3]}>
-      {name}
-    </Heading>
-    <Paragraph fontSize={[2]}>
-      <strong>Type:</strong> {type}
-    </Paragraph>
-    <Paragraph fontSize={[2]}>
-      <strong>Description:</strong> {description}
-    </Paragraph>
-  </Box>
-  <Box>
-  <Link to={`/dashboard/template/${alias}`}>
-    <Button gradient='green'>
-      View Template
-    </Button>
-  </Link>
-  <Modal modal={<FormVerifiableCredentialGenerate name={name} description={description} type={type} claims={claim_fields} />} >
-    <Button gradient='green'>
-        Issue Claims
-      </Button>
-  </Modal>
-  </Box>
-</Flex>
-
 /* -- Global State -- */
 const mapStateToProps = (state, props) => ({
   request: fromData.get(state,  `query|verifiableCredentialTemplates`),
@@ -117,3 +88,32 @@ const mapDispatchToProps = (dispatch, props) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(VerifiableCredentialQuery)
+
+
+const VerifiableCredentialTemplate = ({ alias, name, claim_fields, description, type }) =>
+<Flex between borderBottom='1px solid' borderColor='gray' py={20} align='center' width={1}>
+  <Box width={[1,1, .55]}>
+    <Heading color='blue' fontSize={[3]}>
+      {name}
+    </Heading>
+    <Paragraph fontSize={[2]}>
+      <strong>Type:</strong> {type}
+    </Paragraph>
+    <Paragraph fontSize={[2]}>
+      <strong>Description:</strong> {description}
+    </Paragraph>
+  </Box>
+
+  <Box>
+  <Panel modal={<div>testing</div>} >
+    <ButtonFlat sm uppercase palette='blue'>
+      View Template
+    </ButtonFlat>
+  </Panel>
+  <Panel modal={<FormVerifiableCredentialGenerate name={name} description={description} type={type} claims={claim_fields} />} >
+    <ButtonFlat sm uppercase palette='green' ml={15}>
+      Issue Credential
+    </ButtonFlat>
+  </Panel>
+  </Box>
+</Flex>

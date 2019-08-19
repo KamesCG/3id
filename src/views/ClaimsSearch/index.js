@@ -1,15 +1,14 @@
 /* --- Global Dependencies --- */
-import idx from 'idx'
 import React from 'react'
 import { connect } from 'react-redux';
 
 /* --- Local Dependencies --- */
 import { Box, Button, ButtonFlat, Heading, Flex, Span } from 'atoms'
-import { MenuVerifiableCredentials } from 'views'
 import { FormClaimsSearch } from 'forms'
 import { VerifiableCredentialQuery } from 'containers'
+
 /* --- React Component --- */
-class OrganizationView extends React.Component {
+class ClaimsSearch extends React.Component {
   constructor(props){
     super(props)
     this.state = {
@@ -18,29 +17,26 @@ class OrganizationView extends React.Component {
     }
   }
 
+  // Mounted
   componentDidMount()
   {
 
   }
   
-  /* Will Update */
-  componentWillUpdate()
-  {
 
-  }
-
-  /* Did Update */
+  // Updated
   componentDidUpdate()
   {
 
   }
 
-  /* Will Mount */
-  componentWillUnmount()
+  // Error Caught
+  componentDidCatch()
   {
 
   }
 
+  
 
   render(){
     return(
@@ -81,4 +77,4 @@ const mapDispatchToProps = (dispatch, props) => ({
 
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(OrganizationView)
+export default connect(mapStateToProps, mapDispatchToProps)(ClaimsSearch)

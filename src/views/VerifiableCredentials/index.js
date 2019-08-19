@@ -6,7 +6,9 @@ import { Router } from '@reach/router'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 /* --- Local Dependencies --- */
 import { Box, Button, ButtonFlat, Heading, Flex, Span } from 'atoms'
-import { FormVerifiableCredentialTemplate } from 'forms'
+import { Modal, Panel } from 'components'
+import { IssuersTable } from 'containers'
+import { FormIssuerCreate, FormVerifiableCredentialTemplate } from 'forms'
 import { MenuVerifiableCredentials } from 'views'
 import {
   IssueClaims, Templates, TemplateCreate, Roles,
@@ -56,8 +58,13 @@ class OrganizationView extends React.Component {
             
           </Box>
           <Flex>
-            <ButtonFlat palette='green'>Create Template</ButtonFlat>
-            <ButtonFlat palette='orange' ml={15}>Add Issuer</ButtonFlat>
+            {/* <ButtonFlat palette='orange' ml={15}>Add Issuer</ButtonFlat> */}
+            <Panel modal={<FormVerifiableCredentialTemplate/>} >
+              <ButtonFlat children='Create Template' palette='green' ml={15}/>
+            </Panel>
+            <Panel modal={<FormIssuerCreate/>} >
+              <ButtonFlat children='Add Issuer' palette='orange' ml={15}/>
+            </Panel>
           </Flex>
         </Flex>
 
@@ -73,6 +80,7 @@ class OrganizationView extends React.Component {
                 <Templates path="/templates" />
                 <TemplateCreate path="/templates/create" />
                 <FormVerifiableCredentialTemplate path="/template/create" />
+                <IssuersTable path="/issuers" />
               </Router>
               </PerfectScrollbar>
             </Flex>

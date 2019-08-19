@@ -6,21 +6,14 @@ import { Form, Field, ErrorMessage } from 'formik';
 /* --- Local Dependencies --- */
 import { Button } from 'atoms'
 
-
 /* --- React Component --- */
-class Formik extends React.Component {
+class FormVerifiableCredentialIssue extends React.Component {
   constructor(props){
     super(props)
     this.state = {}
   }
-  
+
   componentDidMount()
-  {
-
-  }
-
-  /* Will Update */
-  componentWillUpdate()
   {
 
   }
@@ -31,11 +24,6 @@ class Formik extends React.Component {
 
   }
 
-  /* Will Mount */
-  componentWillUnmount()
-  {
-    
-  }
   
   /* Render */
   render(){
@@ -71,4 +59,4 @@ export default withFormik({
 
     console.log(values, 'submit action')
   }
-})(Formik)
+})(FormVerifiableCredentialIssue)

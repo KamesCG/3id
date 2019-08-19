@@ -12,8 +12,6 @@ req.keys().forEach((key) => {
   reducers[storeName] = req(key).default
 })
 
-console.log(reducers, 'reducers')
-
 /*-* Combine All Reducers *-*/
 const rootReducer = combineReducers(reducers);
 export default rootReducer;

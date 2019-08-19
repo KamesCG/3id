@@ -6,11 +6,6 @@
     },
     {
         "componentChunkName": "component---src-pages-404-js",
-        "jsonName": "404-html-516",
-        "path": "/404.html"
-    },
-    {
-        "componentChunkName": "component---src-pages-404-js",
         "jsonName": "404-22d",
         "path": "/404/"
     },
@@ -28,17 +23,5 @@
         "componentChunkName": "component---src-pages-token-js",
         "jsonName": "token-674",
         "path": "/token/"
-    },
-    {
-        "componentChunkName": "component---src-pages-account-js",
-        "jsonName": "account-530",
-        "path": "/account/",
-        "matchPath": "/account/*"
-    },
-    {
-        "componentChunkName": "component---src-pages-dashboard-js",
-        "jsonName": "dashboard-a6b",
-        "path": "/dashboard/",
-        "matchPath": "/dashboard/*"
     }
 ]

@@ -12,7 +12,6 @@ import middlewares from '../departments/middlewares'
 import rootReducer from '../departments/reducer'
 import sagas from '../departments/sagas'
 
-console.log(rootReducer, 'rootReducer')
 const configureStore = (initialState, services = {}) => {
   // Redux Configuration
   const middleware = [];
@@ -49,7 +48,7 @@ const configureStore = (initialState, services = {}) => {
     blacklist: ['box', 'database', 'dialog', 'ipfs', 'ethers', 'form', 'routing', 'popover']
   }
   const persistedReducer = persistReducer(persistConfig, rootReducer)
-  const store = createStore(persistedReducer, initialState, enhancer);
+  const store = createStore(rootReducer, initialState, enhancer);
   const persistor = persistStore(store)
 
   // Run Sagas after Store has been initialized 

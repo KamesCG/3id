@@ -7,10 +7,13 @@
 /* --- Global Dependencies --- */
 import React from "react"
 import { Provider } from 'react-redux';
+import { CookiesProvider } from 'react-cookie';
 import { ThemeProvider } from 'styled-components'
 import { PersistGate } from 'redux-persist/integration/react'
 
 /* --- Local Dependencies --- */
+import { CookieManagement } from 'containers'
+import Web3Provider from 'contexts/Providers/Web3Wrapper'
 import themeSettings from 'theme/settings.js'
 
 // Constants
@@ -21,10 +24,14 @@ const { store, persistor } = configureStore();
 
 /* ------ Component ------ */
 export default ({ element }) =>
-<Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      <ThemeProvider theme={themeSettings}>
-        {element}
-      </ThemeProvider>
-    </PersistGate>
-</Provider>
+<CookiesProvider>
+  <CookieManagement>
+    <Provider store={store}>
+          <ThemeProvider theme={themeSettings}>
+            <Web3Provider>
+              {element}
+            </Web3Provider>
+        </ThemeProvider>
+    </Provider>
+  </CookieManagement>
+</CookiesProvider>

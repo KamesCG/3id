@@ -302,9 +302,9 @@
         "owner": "internal-data-bridge"
       }
     },
-    "86974654-b673-5e50-8a06-b2646f5ab5d8": {
+    "d49ad31b-d0e0-564c-9cda-3ce12e93ae3a": {
       "resolve": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/node_modules/gatsby-plugin-alias-imports",
-      "id": "86974654-b673-5e50-8a06-b2646f5ab5d8",
+      "id": "d49ad31b-d0e0-564c-9cda-3ce12e93ae3a",
       "name": "gatsby-plugin-alias-imports",
       "version": "1.0.5",
       "pluginOptions": {
@@ -317,6 +317,8 @@
           "organisms": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/atomic/organisms",
           "components": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/components",
           "containers": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/containers",
+          "contexts": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/contexts",
+          "contracts": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/contracts",
           "views": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/views",
           "fields": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/fields",
           "forms": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/forms",
@@ -385,7 +387,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "49badac3a264eb8e878cb7f3903461db",
+        "contentDigest": "520eeeff46810cf25cb7fab91df5ca1c",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -1005,7 +1007,7 @@
       "resolve": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend",
       "id": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
       "name": "default-site-plugin",
-      "version": "a326d98588f9bd93d7293428bcd077ec",
+      "version": "f5e3b5f56d73bb726160957c28a67198",
       "pluginOptions": {
         "plugins": []
       },
@@ -1044,6 +1046,10 @@
           {
             "name": "dotenv",
             "version": "^8.0.0"
+          },
+          {
+            "name": "ethers",
+            "version": "^4.0.33"
           },
           {
             "name": "formik",
@@ -1118,6 +1124,10 @@
             "version": "^16.8.3"
           },
           {
+            "name": "react-cookie",
+            "version": "^4.0.1"
+          },
+          {
             "name": "react-dom",
             "version": "^16.8.3"
           },
@@ -1140,6 +1150,14 @@
           {
             "name": "react-select",
             "version": "^2.4.3"
+          },
+          {
+            "name": "react-table",
+            "version": "^6.10.0"
+          },
+          {
+            "name": "react-tabs",
+            "version": "^3.0.0"
           },
           {
             "name": "react-toastify",
@@ -1203,7 +1221,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "9968b01d4edd66ff36f2d966f8c9d1c4",
+        "contentDigest": "a9f579dcc08d51b54bc9ce55077fd4c4",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -1317,16 +1335,14 @@
         "description": "Decentralized Application Boilerplate",
         "author": "@kamescg"
       },
-      "port": 8001,
+      "port": "8000",
       "host": "localhost",
-      "pathPrefix": "",
-      "polyfill": true,
-      "buildTime": "2019-08-13T15:06:01.500Z",
+      "buildTime": "2019-08-19T13:30:47.569Z",
       "id": "Site",
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "4d1f734ed62cdeb833e56874036bbfaa",
+        "contentDigest": "7a4ff6790de2753694f0db8baee7eb13",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1336,7 +1352,7 @@
       "children": [],
       "parent": null,
       "internal": {
-        "contentDigest": "6e12ab104feeaab8b7bc3769d63636b2",
+        "contentDigest": "8fcc54347aaae023eb540d764203399a",
         "type": "Directory",
         "description": "Directory \"src/images\"",
         "owner": "gatsby-source-filesystem"
@@ -1348,7 +1364,7 @@
       "size": 128,
       "prettySize": "128 B",
       "modifiedTime": "2019-05-04T22:49:51.086Z",
-      "accessTime": "2019-08-13T15:06:10.921Z",
+      "accessTime": "2019-08-19T13:30:53.122Z",
       "changeTime": "2019-08-12T13:00:17.930Z",
       "birthTime": "2019-05-04T22:49:51.085Z",
       "root": "/",
@@ -1366,11 +1382,11 @@
       "blksize": 4194304,
       "ino": 8613273272,
       "blocks": 0,
-      "atimeMs": 1565708770921.0154,
+      "atimeMs": 1566221453122.254,
       "mtimeMs": 1557010191086.4302,
       "ctimeMs": 1565614817930.2854,
       "birthtimeMs": 1557010191085.204,
-      "atime": "2019-08-13T15:06:10.921Z",
+      "atime": "2019-08-19T13:30:53.122Z",
       "mtime": "2019-05-04T22:49:51.086Z",
       "ctime": "2019-08-12T13:00:17.930Z",
       "birthtime": "2019-05-04T22:49:51.085Z"
@@ -1395,7 +1411,7 @@
       "size": 21212,
       "prettySize": "21.2 kB",
       "modifiedTime": "2019-05-04T22:49:51.087Z",
-      "accessTime": "2019-08-12T13:46:34.128Z",
+      "accessTime": "2019-08-13T16:59:44.891Z",
       "changeTime": "2019-08-12T13:00:17.930Z",
       "birthTime": "2019-05-04T22:49:51.086Z",
       "root": "/",
@@ -1413,11 +1429,11 @@
       "blksize": 4194304,
       "ino": 8613273274,
       "blocks": 48,
-      "atimeMs": 1565617594128.3584,
+      "atimeMs": 1565715584890.8303,
       "mtimeMs": 1557010191086.639,
       "ctimeMs": 1565614817930.1995,
       "birthtimeMs": 1557010191086.4229,
-      "atime": "2019-08-12T13:46:34.128Z",
+      "atime": "2019-08-13T16:59:44.891Z",
       "mtime": "2019-05-04T22:49:51.087Z",
       "ctime": "2019-08-12T13:00:17.930Z",
       "birthtime": "2019-05-04T22:49:51.086Z"
@@ -1452,7 +1468,7 @@
       "size": 167273,
       "prettySize": "167 kB",
       "modifiedTime": "2019-05-04T22:49:51.086Z",
-      "accessTime": "2019-08-12T13:46:34.128Z",
+      "accessTime": "2019-08-13T20:10:14.145Z",
       "changeTime": "2019-08-12T13:00:17.929Z",
       "birthTime": "2019-05-04T22:49:51.085Z",
       "root": "/",
@@ -1470,11 +1486,11 @@
       "blksize": 4194304,
       "ino": 8613273273,
       "blocks": 328,
-      "atimeMs": 1565617594128.3503,
+      "atimeMs": 1565727014145.2424,
       "mtimeMs": 1557010191086.2578,
       "ctimeMs": 1565614817929.3577,
       "birthtimeMs": 1557010191085.2703,
-      "atime": "2019-08-12T13:46:34.128Z",
+      "atime": "2019-08-13T20:10:14.145Z",
       "mtime": "2019-05-04T22:49:51.086Z",
       "ctime": "2019-08-12T13:00:17.929Z",
       "birthtime": "2019-05-04T22:49:51.085Z"
@@ -1506,48 +1522,6 @@
         "type": "SitePage",
         "contentDigest": "c8daf4461d1d82ac0324947dbfd590d7",
         "description": "08149170-695d-5807-b833-eee2fc6f4087",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /account/": {
-      "jsonName": "account-530",
-      "internalComponentName": "ComponentAccount",
-      "path": "/account/",
-      "matchPath": "/account/*",
-      "component": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/account.js",
-      "componentChunkName": "component---src-pages-account-js",
-      "context": {},
-      "pluginCreator___NODE": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
-      "pluginCreatorId": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
-      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/account.js",
-      "id": "SitePage /account/",
-      "parent": null,
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "8aae0fe30a2e69882ba805c2812bbc66",
-        "description": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /dashboard/": {
-      "jsonName": "dashboard-a6b",
-      "internalComponentName": "ComponentDashboard",
-      "path": "/dashboard/",
-      "matchPath": "/dashboard/*",
-      "component": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/dashboard.js",
-      "componentChunkName": "component---src-pages-dashboard-js",
-      "context": {},
-      "pluginCreator___NODE": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
-      "pluginCreatorId": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
-      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/dashboard.js",
-      "id": "SitePage /dashboard/",
-      "parent": null,
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "787a73ab7903875c19d085595d8790d2",
-        "description": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
         "owner": "internal-data-bridge"
       }
     },
@@ -1610,31 +1584,11 @@
         "description": "08149170-695d-5807-b833-eee2fc6f4087",
         "owner": "internal-data-bridge"
       }
-    },
-    "SitePage /404.html": {
-      "jsonName": "404-html-516",
-      "internalComponentName": "Component404Html",
-      "path": "/404.html",
-      "component": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/404.js",
-      "componentChunkName": "component---src-pages-404-js",
-      "context": {},
-      "pluginCreator___NODE": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
-      "pluginCreatorId": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
-      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/404.js",
-      "id": "SitePage /404.html",
-      "parent": null,
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "10b8e565c118bbec7f1f6fe0dd209da8",
-        "description": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
-        "owner": "internal-data-bridge"
-      }
     }
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "92e0db8195283e93e526c853e361d576"
+    "PLUGINS_HASH": "de73e22971f042bbbbdf5ebb07c66980"
   },
   "componentDataDependencies": {
     "nodes": {
@@ -1677,13 +1631,9 @@
       "query": "",
       "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/404.js"
     },
-    "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/account.js": {
+    "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/identity.js": {
       "query": "",
-      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/account.js"
-    },
-    "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/dashboard.js": {
-      "query": "",
-      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/dashboard.js"
+      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/identity.js"
     },
     "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/index.js": {
       "query": "",
@@ -1692,10 +1642,6 @@
     "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/token.js": {
       "query": "",
       "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/token.js"
-    },
-    "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/identity.js": {
-      "query": "",
-      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/identity.js"
     }
   },
   "staticQueryComponents": {

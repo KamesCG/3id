@@ -35,5 +35,3 @@ export default props =>
   </Flex>
 </VerifiableCredentialStyled>
 
-
-// Object.keys(props.decoded).forEach( key => {console.log(key, props.decoded[key]); return <p>{key}: {props.decoded[key]}</p>} )

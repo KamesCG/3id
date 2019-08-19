@@ -16,7 +16,10 @@ const Query =`
     type
     iss
     sub
-    claim 
+    claims {
+      key
+      value
+    }
   }
 }
 `

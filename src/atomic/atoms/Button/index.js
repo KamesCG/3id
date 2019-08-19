@@ -34,10 +34,6 @@ import {
 /* --- Local Dependencies --- */
 const themed = key => props => props.theme[key]
 
-// backgroundSize,
-// backgroundPosition,
-// backgroundRepeat,
-
 const textShadow = style({
   prop: 'textShadow', // React prop name
   cssProperty: 'textShadow', // The corresponding CSS property (defaults to prop argument)

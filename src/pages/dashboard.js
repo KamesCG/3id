@@ -4,16 +4,19 @@ import { Link, Router } from '@reach/router'
 import styled from 'styled-components'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import 'react-perfect-scrollbar/dist/css/styles.css';
+import 'react-table/react-table.css'
+import "react-tabs/style/react-tabs.css";
 
 /* --- Local Dependencies --- */
 import { Heading, Flex } from 'atoms'
-import { AuthorizationLogin } from 'containers'
+import { EthereumConnected } from 'components'
+import { AuthorizationLogin, LoginEthereum } from 'containers'
 import {
   Dashboard,
   People,
   VerifiableCredentials,
   ClaimsSearch,
-  Overview, Search, IssueClaims, Templates, TemplateCreate, Roles,
+  Search, IssueClaims, Templates, TemplateCreate, Roles,
   MenuAside } from 'views'
 
 /* --- Styled Component --- */
@@ -70,29 +73,27 @@ export default props =>
   </AsideStyled>
   <MainStyled>
     <HeaderStyled>
-      <Flex>
-        <AuthorizationLogin styled={{alignSelf:'flex-end', ml: 'auto'}}/>
+      <Flex align='center' between>
+        <EthereumConnected/>
+        <LoginEthereum styled={{alignSelf:'flex-end', ml: 'auto'}}/>
       </Flex>
     </HeaderStyled>
     {/* <PerfectScrollbar>
     <MainInner>
-      <Router>
+    </MainInner>
+    </PerfectScrollbar> */}
+    <MainOuter>
+    <Router>
         <Dashboard path="/dashboard" />
         <Search path="/dashboard/search" />
         <People path="/dashboard/people" />
         <IssueClaims path="/dashboard/issue" />
         <Templates path="/dashboard/templates" />
+        <VerifiableCredentials path="/dashboard/verifiable-credentials/*" />
+        <ClaimsSearch path="/dashboard/claims/*" />
         <TemplateCreate path="/dashboard/templates/create" />
         <Roles path="/dashboard/roles" />
       </Router>
-    </MainInner>
-    </PerfectScrollbar> */}
-    <MainOuter>
-
-    <Router>
-      <VerifiableCredentials path="/dashboard/verifiable-credentials/*" />
-      <ClaimsSearch path="/dashboard/claims/*" />
-    </Router>
     </MainOuter>
   </MainStyled>
 </Flex>

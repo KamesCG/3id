@@ -20,12 +20,13 @@ const theme = {
   ],
   palette: {
     primary: ['#2855de'],
-    blue: ['#5a67c4', '#5168a4', '#2855de', '#92aff8'],
+    blue: ['#5a67c4', '#4160af', '#2855de', '#92aff8'],
     green: ['#34bfa3', '#27b396'],
     rust: ['#b34a4a'],
-    orange: ['#ffa319', '#fb3306'],
+    orange: ['#ffa319', '#eb9617'],
     purple: ['#4e3d63', '#b294d8'],
-    turquoise: ['#3ba0ac'],
+    turquoise: ['#3ba0ac', '#00eec4', '#00d2ad', '#00b49d', '#009885'], //https://www.color-hex.com/color-palette/64616
+    red: ['#df1b1b', '#d62121', '#ce2525', '#c72c2c', '	#ba3030'], // https://www.color-hex.com/color-palette/7080
     grayscale: ['#212121', '#616161', '#9e9e9e', '#bdbdbd', '#e0e0e0', '#ffffff'],
     twitter: ['#5578eb', '#2754e6'],
     google: ['#fd397a', '#fc0758'],
@@ -80,7 +81,7 @@ const theme = {
     // green: ['#00AFA6', '#00C9A7'],
     green: ['#a1c900', '#00af4e'],
     moss: ['#e5ed68' ,'#45cc81', '#00C9A7'],
-    gray: ['#e7dfdf', '#f3f8fa'],
+    gray: ['#f7f5f5', '#f4f6f6'], 
     purple: ['#4E3DF5', '#6832A2'],
     // orange: ['#ff5e3a', '#ff5e3a'],
     turquoise: ['#3ba0ac', '#3ba0ac'],

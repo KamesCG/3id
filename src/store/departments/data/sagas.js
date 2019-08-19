@@ -12,8 +12,8 @@ import actions, {actionTypes} from './actions'
 /* ------ Data Saga Functions ------ */
 export function * queryRequest({payload, meta}) {
   try {
+
     let data = yield GraphQLClient.request(payload)
-    console.log(data, 'query data')
     const key = Object.keys(data)
 
     // // IF :: Query is an array iterate over the nested claims.
@@ -34,10 +34,7 @@ export function * queryRequest({payload, meta}) {
 
 export function * mutateRequest({payload, meta}) {
   try {
-    console.log(payload, meta)
     let data = yield GraphQLClient.request(payload)
-    
-    
     yield put(actions.mutateRequest(SUCCESS)(data, meta))
   } catch (err) {
     errorLogging(err)
