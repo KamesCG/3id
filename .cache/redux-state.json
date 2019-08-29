@@ -231,80 +231,113 @@
         "owner": "internal-data-bridge"
       }
     },
-    "1bf6ef3f-ad5a-5e2e-81e2-7b8ee295912d": {
-      "resolve": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/node_modules/gatsby-plugin-stripe",
-      "id": "1bf6ef3f-ad5a-5e2e-81e2-7b8ee295912d",
-      "name": "gatsby-plugin-stripe",
-      "version": "1.2.0",
+    "1c17c8dc-fd45-5262-bef3-d062cd8946dc": {
+      "resolve": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/node_modules/gatsby-source-strapi",
+      "id": "1c17c8dc-fd45-5262-bef3-d062cd8946dc",
+      "name": "gatsby-source-strapi",
+      "version": "0.0.9",
       "pluginOptions": {
         "plugins": [],
-        "async": true
+        "apiURL": "http://localhost:1337",
+        "queryLimit": 1000,
+        "contentTypes": [
+          "issuer",
+          "documentation"
+        ],
+        "loginData": {
+          "identifier": "",
+          "password": ""
+        }
       },
-      "nodeAPIs": [],
-      "browserAPIs": [],
-      "ssrAPIs": [
-        "onRenderBody"
+      "nodeAPIs": [
+        "sourceNodes"
       ],
-      "pluginFilepath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/node_modules/gatsby-plugin-stripe",
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/node_modules/gatsby-source-strapi",
       "packageJson": {
-        "name": "gatsby-plugin-stripe",
-        "description": "Gatsby plugin that adds stripe.js to site",
-        "version": "1.2.0",
-        "main": "index.js",
+        "name": "gatsby-source-strapi",
+        "description": "Gatsby source plugin for building websites using Strapi as a data source",
+        "version": "0.0.9",
         "keywords": [
           "gatsby",
           "gatsby-plugin",
-          "stripe",
-          "stripe.js"
+          "gatsby-source-plugin",
+          "strapi"
         ],
         "author": {
-          "name": "Nathan Beck",
-          "email": "njosefbeck@gmail.com"
+          "name": "Strapi Solutions",
+          "email": "hi@strapi.io",
+          "url": "http://strapi.io"
         },
         "license": "MIT",
-        "dependencies": [],
+        "dependencies": [
+          {
+            "name": "axios",
+            "version": "^0.18.0"
+          },
+          {
+            "name": "gatsby-node-helpers",
+            "version": "^0.3.0"
+          },
+          {
+            "name": "gatsby-source-filesystem",
+            "version": "^1.5.39"
+          },
+          {
+            "name": "lodash",
+            "version": "^4.17.11"
+          },
+          {
+            "name": "pluralize",
+            "version": "^7.0.0"
+          }
+        ],
         "devDependencies": [
           {
             "name": "babel-cli",
-            "version": "6.26.0"
+            "version": "^6.24.1"
+          },
+          {
+            "name": "babel-plugin-transform-async-to-generator",
+            "version": "^6.24.1"
+          },
+          {
+            "name": "babel-plugin-transform-object-rest-spread",
+            "version": "^6.23.0"
+          },
+          {
+            "name": "babel-plugin-transform-runtime",
+            "version": "^6.23.0"
           },
           {
             "name": "babel-preset-env",
-            "version": "1.7.0"
+            "version": "^1.6.0"
           },
           {
-            "name": "babel-preset-react",
-            "version": "6.24.1"
+            "name": "pre-commit",
+            "version": "^1.2.2"
           },
           {
-            "name": "babel-runtime",
-            "version": "6.26.0"
-          },
-          {
-            "name": "cross-env",
-            "version": "5.2.0"
+            "name": "prettier",
+            "version": "^1.5.3"
           }
         ],
-        "peerDependencies": [
-          {
-            "name": "gatsby",
-            "version": ">=1"
-          }
-        ],
+        "peerDependencies": [],
         "optionalDependecies": [],
         "bundledDependecies": []
       },
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "e5ca45c7c7cab1934474821b2284b009",
+        "contentDigest": "a4e89df0a96115909bdf26f65d14e04a",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
     },
-    "d49ad31b-d0e0-564c-9cda-3ce12e93ae3a": {
+    "aa81cf53-e7c6-5b1f-850e-a4c72c9cfd1e": {
       "resolve": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/node_modules/gatsby-plugin-alias-imports",
-      "id": "d49ad31b-d0e0-564c-9cda-3ce12e93ae3a",
+      "id": "aa81cf53-e7c6-5b1f-850e-a4c72c9cfd1e",
       "name": "gatsby-plugin-alias-imports",
       "version": "1.0.5",
       "pluginOptions": {
@@ -319,13 +352,17 @@
           "containers": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/containers",
           "contexts": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/contexts",
           "contracts": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/contracts",
+          "helpers": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/helpers",
           "views": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/views",
           "fields": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/fields",
           "forms": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/forms",
           "settings": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/settings",
           "services": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/services",
-          "store": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/store",
-          "theme": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/theme"
+          "static": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/static",
+          "storeRedux": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/store",
+          "theme": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/theme",
+          "Box": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/atomic/atoms/Box",
+          "Flex": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/atomic/atoms/Flex"
         },
         "extensions": []
       },
@@ -387,7 +424,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "520eeeff46810cf25cb7fab91df5ca1c",
+        "contentDigest": "20c16d1021afa56e32ca55af024ab4aa",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -1007,17 +1044,21 @@
       "resolve": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend",
       "id": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
       "name": "default-site-plugin",
-      "version": "f5e3b5f56d73bb726160957c28a67198",
+      "version": "974d7128f97f65e75a955a4b397545f4",
       "pluginOptions": {
         "plugins": []
       },
       "nodeAPIs": [
-        "onCreatePage"
+        "onCreateWebpackConfig",
+        "onCreatePage",
+        "createPages"
       ],
       "browserAPIs": [
         "wrapRootElement"
       ],
-      "ssrAPIs": [],
+      "ssrAPIs": [
+        "wrapRootElement"
+      ],
       "pluginFilepath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend",
       "packageJson": {
         "name": "rapid-dapp-frontend",
@@ -1032,8 +1073,28 @@
         "license": "MIT",
         "dependencies": [
           {
+            "name": "3box",
+            "version": "^1.10.7"
+          },
+          {
             "name": "@babel/plugin-transform-modules-commonjs",
             "version": "^7.5.0"
+          },
+          {
+            "name": "@kirby-web3/parent-react",
+            "version": "^1.0.1"
+          },
+          {
+            "name": "@kirby-web3/plugin-ethereum",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "@mdx-js/react",
+            "version": "^1.4.0"
+          },
+          {
+            "name": "@mdx-js/runtime",
+            "version": "^1.4.0"
           },
           {
             "name": "babel-plugin-styled-components",
@@ -1116,12 +1177,20 @@
             "version": "^2.5.5"
           },
           {
+            "name": "js-cookie",
+            "version": "^2.2.1"
+          },
+          {
+            "name": "mdx.macro",
+            "version": "^0.2.8"
+          },
+          {
             "name": "prop-types",
             "version": "^15.7.2"
           },
           {
             "name": "react",
-            "version": "^16.8.3"
+            "version": "^16.9.0"
           },
           {
             "name": "react-cookie",
@@ -1129,11 +1198,19 @@
           },
           {
             "name": "react-dom",
-            "version": "^16.8.3"
+            "version": "^16.9.0"
           },
           {
             "name": "react-helmet",
             "version": "^5.2.0"
+          },
+          {
+            "name": "react-icons",
+            "version": "^3.7.0"
+          },
+          {
+            "name": "react-markdown",
+            "version": "^4.1.0"
           },
           {
             "name": "react-modal",
@@ -1149,7 +1226,15 @@
           },
           {
             "name": "react-select",
-            "version": "^2.4.3"
+            "version": "^2.4.4"
+          },
+          {
+            "name": "react-sortable-tree",
+            "version": "^2.6.2"
+          },
+          {
+            "name": "react-switch",
+            "version": "^5.0.1"
           },
           {
             "name": "react-table",
@@ -1158,6 +1243,10 @@
           {
             "name": "react-tabs",
             "version": "^3.0.0"
+          },
+          {
+            "name": "react-tiny-popover",
+            "version": "^3.4.5"
           },
           {
             "name": "react-toastify",
@@ -1182,6 +1271,10 @@
           {
             "name": "redux-saga",
             "version": "^1.0.2"
+          },
+          {
+            "name": "remark",
+            "version": "^11.0.1"
           },
           {
             "name": "stripe",
@@ -1210,6 +1303,14 @@
         ],
         "devDependencies": [
           {
+            "name": "@mdx-js/loader",
+            "version": "^1.4.0"
+          },
+          {
+            "name": "gatsby-source-strapi",
+            "version": "0.0.9"
+          },
+          {
             "name": "prettier",
             "version": "^1.16.4"
           }
@@ -1221,7 +1322,7 @@
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "a9f579dcc08d51b54bc9ce55077fd4c4",
+        "contentDigest": "18b764573f3e3eefbe2b60ca3decd516",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -1337,14 +1438,50 @@
       },
       "port": "8000",
       "host": "localhost",
-      "buildTime": "2019-08-19T13:30:47.569Z",
+      "pathPrefix": "",
+      "polyfill": true,
+      "buildTime": "2019-08-29T15:49:51.795Z",
       "id": "Site",
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "7a4ff6790de2753694f0db8baee7eb13",
+        "contentDigest": "a3154d4ce542d2b3ee484948457176f7",
         "type": "Site",
         "owner": "internal-data-bridge"
+      }
+    },
+    "Issuer_1": {
+      "name": "Rapid",
+      "did": "did:eth:0x",
+      "url": "http://dapp.rapid-mesh.com",
+      "body": "Donec scelerisque tempor velit ut aliquam. Nullam finibus vulputate velit, non accumsan ligula semper in. Morbi dolor ex, sollicitudin ut purus ultrices, laoreet egestas tortor. Curabitur efficitur, justo laoreet gravida viverra, mauris augue aliquet tortor, at viverra est felis tempus ligula. Sed aliquet eros in hendrerit consectetur. Fusce viverra accumsan felis eu auctor. Nam volutpat et massa quis volutpat.",
+      "created_at": "2019-08-21T16:19:01.699Z",
+      "updated_at": "2019-08-21T16:19:01.704Z",
+      "strapiId": 1,
+      "id": "Issuer_1",
+      "parent": "__SOURCE__",
+      "children": [],
+      "internal": {
+        "type": "StrapiIssuer",
+        "contentDigest": "96429f959bcad9d48e20f13bf97b7948",
+        "owner": "gatsby-source-strapi"
+      }
+    },
+    "Documentation_1": {
+      "title": "What Is A Verifiable Credential",
+      "tagline": "A collection of cryptographically signed and verifiable information.",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed est erat. Morbi a semper enim, at accumsan risus. Nulla facilisi. Nulla semper erat vitae neque dictum, id placerat arcu eleifend. Sed ornare sodales sodales. Sed vulputate, est vitae rhoncus cursus, lorem sem rhoncus quam, ut eleifend metus tellus condimentum turpis. Suspendisse potenti. Morbi scelerisque urna lectus, a eleifend erat euismod eget. Nullam faucibus quis tellus vel scelerisque.\n\nCras lobortis neque vel auctor tincidunt. Pellentesque pharetra ante nec ex venenatis dictum. Ut sit amet sapien pulvinar, ultricies eros a, accumsan magna. Praesent ornare sed mauris vel tincidunt. Aliquam at elit eu libero scelerisque dapibus. Suspendisse et dui facilisis, imperdiet ipsum at, fringilla ex. Proin non malesuada leo, id ultrices erat. Proin sed ipsum ut neque iaculis maximus. Nam congue rutrum posuere. Donec tincidunt purus at libero efficitur tincidunt. In dictum sodales tortor, tincidunt consequat odio dapibus ac. Integer egestas arcu odio, non rhoncus libero tincidunt eu.\n\nPhasellus cursus justo nec arcu lacinia posuere. Nullam accumsan tellus nec libero ultrices, a varius turpis laoreet. Pellentesque placerat lobortis orci, nec efficitur augue vehicula quis. Donec elit justo, egestas tempus lacus vitae, dapibus vehicula leo. Phasellus id gravida odio, vel mattis arcu. Nulla bibendum tristique fringilla. Ut sapien mi, finibus eu enim non, dignissim tincidunt tortor.",
+      "alias": "what-is-a-verifiable-credential",
+      "created_at": "2019-08-27T15:35:27.055Z",
+      "updated_at": "2019-08-27T15:37:03.788Z",
+      "strapiId": 1,
+      "id": "Documentation_1",
+      "parent": "__SOURCE__",
+      "children": [],
+      "internal": {
+        "type": "StrapiDocumentation",
+        "contentDigest": "8775b7f4bfdd329f4fde7c3d3bcd324d",
+        "owner": "gatsby-source-strapi"
       }
     },
     "584bccbe-6ef9-5da2-8db5-b594d313f6ba": {
@@ -1352,7 +1489,7 @@
       "children": [],
       "parent": null,
       "internal": {
-        "contentDigest": "8fcc54347aaae023eb540d764203399a",
+        "contentDigest": "b77c5a3efcbb8b1e53457effedcdcd7f",
         "type": "Directory",
         "description": "Directory \"src/images\"",
         "owner": "gatsby-source-filesystem"
@@ -1364,7 +1501,7 @@
       "size": 128,
       "prettySize": "128 B",
       "modifiedTime": "2019-05-04T22:49:51.086Z",
-      "accessTime": "2019-08-19T13:30:53.122Z",
+      "accessTime": "2019-08-29T15:49:54.749Z",
       "changeTime": "2019-08-12T13:00:17.930Z",
       "birthTime": "2019-05-04T22:49:51.085Z",
       "root": "/",
@@ -1382,11 +1519,11 @@
       "blksize": 4194304,
       "ino": 8613273272,
       "blocks": 0,
-      "atimeMs": 1566221453122.254,
+      "atimeMs": 1567093794748.9617,
       "mtimeMs": 1557010191086.4302,
       "ctimeMs": 1565614817930.2854,
       "birthtimeMs": 1557010191085.204,
-      "atime": "2019-08-19T13:30:53.122Z",
+      "atime": "2019-08-29T15:49:54.749Z",
       "mtime": "2019-05-04T22:49:51.086Z",
       "ctime": "2019-08-12T13:00:17.930Z",
       "birthtime": "2019-05-04T22:49:51.085Z"
@@ -1411,7 +1548,7 @@
       "size": 21212,
       "prettySize": "21.2 kB",
       "modifiedTime": "2019-05-04T22:49:51.087Z",
-      "accessTime": "2019-08-13T16:59:44.891Z",
+      "accessTime": "2019-08-29T14:23:28.522Z",
       "changeTime": "2019-08-12T13:00:17.930Z",
       "birthTime": "2019-05-04T22:49:51.086Z",
       "root": "/",
@@ -1429,11 +1566,11 @@
       "blksize": 4194304,
       "ino": 8613273274,
       "blocks": 48,
-      "atimeMs": 1565715584890.8303,
+      "atimeMs": 1567088608522.1775,
       "mtimeMs": 1557010191086.639,
       "ctimeMs": 1565614817930.1995,
       "birthtimeMs": 1557010191086.4229,
-      "atime": "2019-08-13T16:59:44.891Z",
+      "atime": "2019-08-29T14:23:28.522Z",
       "mtime": "2019-05-04T22:49:51.087Z",
       "ctime": "2019-08-12T13:00:17.930Z",
       "birthtime": "2019-05-04T22:49:51.086Z"
@@ -1468,7 +1605,7 @@
       "size": 167273,
       "prettySize": "167 kB",
       "modifiedTime": "2019-05-04T22:49:51.086Z",
-      "accessTime": "2019-08-13T20:10:14.145Z",
+      "accessTime": "2019-08-29T15:49:51.143Z",
       "changeTime": "2019-08-12T13:00:17.929Z",
       "birthTime": "2019-05-04T22:49:51.085Z",
       "root": "/",
@@ -1486,11 +1623,11 @@
       "blksize": 4194304,
       "ino": 8613273273,
       "blocks": 328,
-      "atimeMs": 1565727014145.2424,
+      "atimeMs": 1567093791143.0005,
       "mtimeMs": 1557010191086.2578,
       "ctimeMs": 1565614817929.3577,
       "birthtimeMs": 1557010191085.2703,
-      "atime": "2019-08-13T20:10:14.145Z",
+      "atime": "2019-08-29T15:49:51.143Z",
       "mtime": "2019-05-04T22:49:51.086Z",
       "ctime": "2019-08-12T13:00:17.929Z",
       "birthtime": "2019-05-04T22:49:51.085Z"
@@ -1503,6 +1640,57 @@
         "contentDigest": "6d91c86c0fde632ba4cd01062fd9ccfa",
         "type": "ImageSharp",
         "owner": "gatsby-transformer-sharp"
+      }
+    },
+    "SitePage /issuer/Issuer_1": {
+      "jsonName": "issuer-issuer-1-af1",
+      "internalComponentName": "ComponentIssuerIssuer1",
+      "path": "/issuer/Issuer_1",
+      "component": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/views/Issuer/index.js",
+      "componentChunkName": "component---src-views-issuer-index-js",
+      "context": {
+        "id": "Issuer_1",
+        "name": "Rapid",
+        "did": "did:eth:0x",
+        "body": "Donec scelerisque tempor velit ut aliquam. Nullam finibus vulputate velit, non accumsan ligula semper in. Morbi dolor ex, sollicitudin ut purus ultrices, laoreet egestas tortor. Curabitur efficitur, justo laoreet gravida viverra, mauris augue aliquet tortor, at viverra est felis tempus ligula. Sed aliquet eros in hendrerit consectetur. Fusce viverra accumsan felis eu auctor. Nam volutpat et massa quis volutpat."
+      },
+      "pluginCreator___NODE": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
+      "pluginCreatorId": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
+      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/views/Issuer/index.js",
+      "id": "SitePage /issuer/Issuer_1",
+      "parent": null,
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "984a83f936845fafcbc4ed2d03aeba48",
+        "description": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /docs/what-is-a-verifiable-credential": {
+      "jsonName": "docs-what-is-a-verifiable-credential-aac",
+      "internalComponentName": "ComponentDocsWhatIsAVerifiableCredential",
+      "path": "/docs/what-is-a-verifiable-credential",
+      "component": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/views/Documentation/index.js",
+      "componentChunkName": "component---src-views-documentation-index-js",
+      "context": {
+        "id": "Documentation_1",
+        "alias": "what-is-a-verifiable-credential",
+        "title": "What Is A Verifiable Credential",
+        "tagline": "A collection of cryptographically signed and verifiable information.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed est erat. Morbi a semper enim, at accumsan risus. Nulla facilisi. Nulla semper erat vitae neque dictum, id placerat arcu eleifend. Sed ornare sodales sodales. Sed vulputate, est vitae rhoncus cursus, lorem sem rhoncus quam, ut eleifend metus tellus condimentum turpis. Suspendisse potenti. Morbi scelerisque urna lectus, a eleifend erat euismod eget. Nullam faucibus quis tellus vel scelerisque.\n\nCras lobortis neque vel auctor tincidunt. Pellentesque pharetra ante nec ex venenatis dictum. Ut sit amet sapien pulvinar, ultricies eros a, accumsan magna. Praesent ornare sed mauris vel tincidunt. Aliquam at elit eu libero scelerisque dapibus. Suspendisse et dui facilisis, imperdiet ipsum at, fringilla ex. Proin non malesuada leo, id ultrices erat. Proin sed ipsum ut neque iaculis maximus. Nam congue rutrum posuere. Donec tincidunt purus at libero efficitur tincidunt. In dictum sodales tortor, tincidunt consequat odio dapibus ac. Integer egestas arcu odio, non rhoncus libero tincidunt eu.\n\nPhasellus cursus justo nec arcu lacinia posuere. Nullam accumsan tellus nec libero ultrices, a varius turpis laoreet. Pellentesque placerat lobortis orci, nec efficitur augue vehicula quis. Donec elit justo, egestas tempus lacus vitae, dapibus vehicula leo. Phasellus id gravida odio, vel mattis arcu. Nulla bibendum tristique fringilla. Ut sapien mi, finibus eu enim non, dignissim tincidunt tortor."
+      },
+      "pluginCreator___NODE": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
+      "pluginCreatorId": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
+      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/views/Documentation/index.js",
+      "id": "SitePage /docs/what-is-a-verifiable-credential",
+      "parent": null,
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "0198a4c5570c7ceceb63a6a994d94549",
+        "description": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
+        "owner": "internal-data-bridge"
       }
     },
     "SitePage /404/": {
@@ -1522,6 +1710,48 @@
         "type": "SitePage",
         "contentDigest": "c8daf4461d1d82ac0324947dbfd590d7",
         "description": "08149170-695d-5807-b833-eee2fc6f4087",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /account/": {
+      "jsonName": "account-530",
+      "internalComponentName": "ComponentAccount",
+      "path": "/account/",
+      "matchPath": "/account/*",
+      "component": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/account.js",
+      "componentChunkName": "component---src-pages-account-js",
+      "context": {},
+      "pluginCreator___NODE": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
+      "pluginCreatorId": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
+      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/account.js",
+      "id": "SitePage /account/",
+      "parent": null,
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "8aae0fe30a2e69882ba805c2812bbc66",
+        "description": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /dashboard/": {
+      "jsonName": "dashboard-a6b",
+      "internalComponentName": "ComponentDashboard",
+      "path": "/dashboard/",
+      "matchPath": "/dashboard/*",
+      "component": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/dashboard.js",
+      "componentChunkName": "component---src-pages-dashboard-js",
+      "context": {},
+      "pluginCreator___NODE": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
+      "pluginCreatorId": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
+      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/dashboard.js",
+      "id": "SitePage /dashboard/",
+      "parent": null,
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "787a73ab7903875c19d085595d8790d2",
+        "description": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
         "owner": "internal-data-bridge"
       }
     },
@@ -1565,6 +1795,26 @@
         "owner": "internal-data-bridge"
       }
     },
+    "SitePage /profile/": {
+      "jsonName": "profile-2a3",
+      "internalComponentName": "ComponentProfile",
+      "path": "/profile/",
+      "component": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/profile.js",
+      "componentChunkName": "component---src-pages-profile-js",
+      "context": {},
+      "pluginCreator___NODE": "08149170-695d-5807-b833-eee2fc6f4087",
+      "pluginCreatorId": "08149170-695d-5807-b833-eee2fc6f4087",
+      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/profile.js",
+      "id": "SitePage /profile/",
+      "parent": null,
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "ba15ccde87ec6ff4008fc87560534897",
+        "description": "08149170-695d-5807-b833-eee2fc6f4087",
+        "owner": "internal-data-bridge"
+      }
+    },
     "SitePage /token/": {
       "jsonName": "token-674",
       "internalComponentName": "ComponentToken",
@@ -1584,11 +1834,31 @@
         "description": "08149170-695d-5807-b833-eee2fc6f4087",
         "owner": "internal-data-bridge"
       }
+    },
+    "SitePage /404.html": {
+      "jsonName": "404-html-516",
+      "internalComponentName": "Component404Html",
+      "path": "/404.html",
+      "component": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/404.js",
+      "componentChunkName": "component---src-pages-404-js",
+      "context": {},
+      "pluginCreator___NODE": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
+      "pluginCreatorId": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
+      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/404.js",
+      "id": "SitePage /404.html",
+      "parent": null,
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "10b8e565c118bbec7f1f6fe0dd209da8",
+        "description": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
+        "owner": "internal-data-bridge"
+      }
     }
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "de73e22971f042bbbbdf5ebb07c66980"
+    "PLUGINS_HASH": "365d68407d31f585158f9173587093ec"
   },
   "componentDataDependencies": {
     "nodes": {
@@ -1603,26 +1873,41 @@
         "sq--src-components-image-js"
       ]
     },
-    "connections": {}
+    "connections": {
+      "StrapiIssuer": [
+        null
+      ],
+      "StrapiDocumentation": [
+        null
+      ]
+    }
   },
   "jsonDataPaths": {
-    "dev-404-page-5f9": "920/path---dev-404-page-5-f-9-fab-NZuapzHg3X9TaN1iIixfv1W23E",
-    "sq--src-components-layout-index-js": 755544856,
-    "sq--src-components-seo-js": 1025518380,
     "404-22d": "44/path---404-22-d-bce-NZuapzHg3X9TaN1iIixfv1W23E",
+    "sq--src-components-seo-js": 1025518380,
+    "sq--src-components-layout-index-js": 755544856,
     "account-530": "163/path---account-530-2d6-qln1ccwMVnOuDMRoTnpQgb5UE",
-    "checkout-870": "835/path---checkout-870-d22-NZuapzHg3X9TaN1iIixfv1W23E",
     "dashboard-a6b": "750/path---dashboard-a-6-b-9ce-Vvq0UZ5LgMFqp3vUE792wNRik",
+    "identity-9ac": "313/path---identity-9-ac-d88-NZuapzHg3X9TaN1iIixfv1W23E",
     "index": "173/path---index-6a9-NZuapzHg3X9TaN1iIixfv1W23E",
-    "page-2-fbc": "53/path---page-2-fbc-5a8-NZuapzHg3X9TaN1iIixfv1W23E",
-    "product-410": "295/path---product-410-a7d-NZuapzHg3X9TaN1iIixfv1W23E",
+    "token-674": "945/path---token-674-cb5-NZuapzHg3X9TaN1iIixfv1W23E",
     "404-html-516": "164/path---404-html-516-62a-NZuapzHg3X9TaN1iIixfv1W23E",
     "sq--src-components-image-js": 2011440971,
-    "token-674": "945/path---token-674-cb5-NZuapzHg3X9TaN1iIixfv1W23E",
-    "token-copy-5a6": "574/path---token-copy-5-a-6-120-NZuapzHg3X9TaN1iIixfv1W23E",
-    "identity-9ac": "313/path---identity-9-ac-d88-NZuapzHg3X9TaN1iIixfv1W23E"
+    "issuer-issuer-1-af1": "191/path---issuer-issuer-1-af-1-6ce-KWDwNtRmub5dWhzb9BfRTRuV3Y",
+    "dev-404-page-5f9": "920/path---dev-404-page-5-f-9-fab-NZuapzHg3X9TaN1iIixfv1W23E",
+    "docs-what-is-a-verifiable-credential-aac": "715/path---docs-what-is-a-verifiable-credential-aac-1f1-oRmB5uIXX2GgejtkIzNwK8Tl66Y",
+    "account-copy-8ac": "91/path---account-copy-8-ac-324-qln1ccwMVnOuDMRoTnpQgb5UE",
+    "profile-2a3": "971/path---profile-2-a-3-b0c-NZuapzHg3X9TaN1iIixfv1W23E"
   },
   "components": {
+    "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/views/Issuer/index.js": {
+      "query": "",
+      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/views/Issuer/index.js"
+    },
+    "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/views/Documentation/index.js": {
+      "query": "",
+      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/views/Documentation/index.js"
+    },
     "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/.cache/dev-404-page.js": {
       "query": "",
       "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/.cache/dev-404-page.js"
@@ -1631,6 +1916,14 @@
       "query": "",
       "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/404.js"
     },
+    "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/account.js": {
+      "query": "",
+      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/account.js"
+    },
+    "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/dashboard.js": {
+      "query": "",
+      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/dashboard.js"
+    },
     "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/identity.js": {
       "query": "",
       "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/identity.js"
@@ -1638,6 +1931,10 @@
     "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/index.js": {
       "query": "",
       "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/index.js"
+    },
+    "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/profile.js": {
+      "query": "",
+      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/profile.js"
     },
     "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/token.js": {
       "query": "",

@@ -5,8 +5,8 @@ import { withFormik } from 'formik';
 import { Form, FieldArray, ErrorMessage } from 'formik';
 
 /* --- Local Dependencies --- */
-import data from 'store/departments/data/actions'
-import { fromData } from 'store/departments/selectors'
+import data from 'storeRedux/departments/data/actions'
+import { fromData } from 'storeRedux/departments/selectors'
 import { Box, Button, ButtonFlat, Flex, Heading, Paragraph, Span } from 'atoms'
 import { Input } from 'fields'
 

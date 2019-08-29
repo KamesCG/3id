@@ -233,6 +233,11 @@ textarea {
   z-index: 1000;
 }
 
+.popover {
+  overflow: visible !important;
+  z-index: 1000;
+}
+
 .scrollbar-container {
   width: 100%;
 }

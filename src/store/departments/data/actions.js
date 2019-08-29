@@ -3,7 +3,7 @@
 import {
   action,
   createRequestTypes,
-} from "store/departments/utils";
+} from 'storeRedux/departments/utils';
 
 /* ------ Constants ------ */
 export const department = 'data';

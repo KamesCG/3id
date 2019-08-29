@@ -10,8 +10,9 @@ import "react-tabs/style/react-tabs.css";
 /* --- Local Dependencies --- */
 import { Heading, Flex } from 'atoms'
 import { EthereumConnected } from 'components'
-import { AuthorizationLogin, LoginEthereum } from 'containers'
+import { AuthorizationLogin, LoginEthereum, LoginDuel } from 'containers'
 import {
+  Account,
   Dashboard,
   People,
   VerifiableCredentials,
@@ -51,6 +52,7 @@ const MainStyled = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  overflow: auto;
   width: 85%;
 `
 const MainOuter = styled.div`
@@ -75,7 +77,7 @@ export default props =>
     <HeaderStyled>
       <Flex align='center' between>
         <EthereumConnected/>
-        <LoginEthereum styled={{alignSelf:'flex-end', ml: 'auto'}}/>
+        <LoginDuel/>
       </Flex>
     </HeaderStyled>
     {/* <PerfectScrollbar>
@@ -85,6 +87,7 @@ export default props =>
     <MainOuter>
     <Router>
         <Dashboard path="/dashboard" />
+        <Account path="/dashboard/account/*" />
         <Search path="/dashboard/search" />
         <People path="/dashboard/people" />
         <IssueClaims path="/dashboard/issue" />

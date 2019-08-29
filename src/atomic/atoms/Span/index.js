@@ -31,18 +31,10 @@ import {
   variant,
   style
 } from 'styled-system'
-import { defaultProps } from 'recompose';
 
-const textShadow = style({
-  prop: 'textShadow', // React prop name
-  cssProperty: 'textShadow', // The corresponding CSS property (defaults to prop argument)
-  key: 'textShadow',
-})
-
-const cursor = style({
-  prop: 'cursor',
-  cssProperty: 'cursor',
-})
+/* --- Local Dependencies --- */
+import { withoutProps } from 'helpers'
+import { cursor, textShadow, transform, zIndex } from 'helpers/styles'
 
 const Text = styled.span(props => ({
   boxSizing: 'border-box',
@@ -75,20 +67,50 @@ const Text = styled.span(props => ({
   width,
 )
 
-const Span = styled(Text)`
+const Span = styled(withoutProps(['color', 'floating', 'fontSize', 'fontWeight'])('span'))`
+  ${alignSelf}
+  ${backgroundColor}
+  ${borderColor}
+  ${borderRadius}
+  ${boxShadow}
+  ${color}
+  ${fontSize}
+  ${fontWeight}
+  ${lineHeight}
+  ${letterSpacing}
+  ${opacity}
+  ${space}
+  ${textAlign}
+  ${transform}
   ${textShadow}
+  ${width}
   color: ${({palette}) => palette ? palettes(palette[0], palette[1]) : null};
+  ${is('pointer')`
+    cursor: pointer;
+  `};
   ${is('block')`
     display: block;
   `}
   ${is('inlineBlock')`
     display: inline-block;
   `}
+  ${is('round')`
+    border-radius: 9999px;
+  `}
+
+  ${is('tag')`
+    border-radius: 7px;
+    font-size: 12px;
+    padding: 5px 15px;
+    text-shadow: 0 1px 1px rgba(45, 45, 45, 0.28);
+  `}
+
   ${is('hoverBold')`
     &:hover {
       font-weight: bold;
     }
   `}
+  
   ${is('hoverUnderline')`
       position: relative;
       &:after {

@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components'
 import themeSettings from '../theme/settings.js'
 
 // Constants
-import { configureStore } from 'store/configuration'
+import { configureStore } from 'storeRedux/configuration'
 
 /* --- Configuration --- */
 const { store, persistor } = configureStore();

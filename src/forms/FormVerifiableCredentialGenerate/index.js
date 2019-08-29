@@ -5,8 +5,8 @@ import { withFormik } from 'formik';
 import { FieldArray, Form, ErrorMessage } from 'formik';
 
 /* --- Local Dependencies --- */
-import data from 'store/departments/data/actions'
-import { fromData } from 'store/departments/selectors'
+import data from 'storeRedux/departments/data/actions'
+import { fromData } from 'storeRedux/departments/selectors'
 import { ButtonFlat, Heading, HorizontalRule, Flex, Paragraph, Span } from 'atoms'
 import { Input } from 'fields'
 
@@ -160,7 +160,6 @@ const FormTemplate = withFormik({
 
     console.log(values, props)
     const Mutation = MutationGenerate(values)
-    console.log(Mutation)
     props.mutateRequest(Mutation)
   }
 })(FormVerifiableCredentialGenerate)

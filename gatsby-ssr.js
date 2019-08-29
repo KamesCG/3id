@@ -1,4 +1,4 @@
-// import wrapRootElement from 'store/providers.js';
-// export {
-//   wrapRootElement
-// }
+import wrapRootElement from 'storeRedux/providers.js';
+export {
+  wrapRootElement
+}

@@ -3,7 +3,7 @@ import { all, put, takeEvery } from 'redux-saga/effects';
 
 /* --- Local Dependencies --- */
 import GraphQLClient from 'settings/graphql'
-import { SUCCESS, FAILURE } from "store/departments/utils";
+import { SUCCESS, FAILURE } from 'storeRedux/departments/utils';
 
 /* --- Module Dependencies --- */
 import { errorLogging } from '../logging'

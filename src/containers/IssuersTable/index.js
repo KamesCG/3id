@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import ReactTable from 'react-table'
  
 /* --- Local Dependencies --- */
-import data from 'store/departments/data/actions'
-import { fromData } from 'store/departments/selectors'
+import data from 'storeRedux/departments/data/actions'
+import { fromData } from 'storeRedux/departments/selectors'
 import { ButtonFlat, Heading, HorizontalRule, Paragraph, Span } from 'atoms'
 
 /* --- React Component --- */

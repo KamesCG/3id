@@ -5,7 +5,7 @@ import { compose, lifecycle } from "recompose";
 
 /* --- Local Dependencies --- */
 import Component from './component';
-import { authLoginWithAuthorization } from 'store/departments/actions'
+import { authLoginWithAuthorization } from 'storeRedux/departments/actions'
 
 /* ------- React Container ------- */
 /*-* Recompose *-*/

@@ -4,8 +4,8 @@ import { withFormik } from 'formik';
 import { Form, Field, ErrorMessage } from 'formik';
 
 /* --- Local Dependencies --- */
-import { Box, Button, Flex, Heading, Span } from 'atoms'
-
+import { Box, Button, ButtonFlat, Flex, Heading, Span } from 'atoms'
+import { Switch } from 'fields'
 /* --- Styled Components --- */
 import styled from 'styled-components'
 const SearchField = styled(Field)`
@@ -26,7 +26,7 @@ class Formik extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      filterIsOpen: false
+      filterIsOpen: true
     }
 
     this.openFilter = this.openFilter.bind(this);
@@ -71,40 +71,40 @@ class Formik extends React.Component {
   
   /* Render */
   render(){
+    const { isValid, setFieldValue, setFieldTouched } = this.props
     return(
       <Box {...this.props.styled}>
         <Form onSubmit={this.props.handleSubmit} style={{width: '100%'}} >
-          <Flex>
-            <SearchField type="text" name="name" placeholder='Decentralized Identifier...' />
-            
-  
-            <Button type="submit" disabled={this.props.isSubmitting} color='white' gradient='blue' borderRadius='0 10px 10px 0' mx={0} width={150}>
-              Search
-            </Button>
+          <Flex column color='white'>
+            <Label>Address <ErrorMessage name="issuer" component="span" /></Label>
+            <IssuerSearchField type="text" name="address" placeholder='0xK19...F56V' />
+          </Flex>
+          <Flex column color='white'>
+            <Label>Name <ErrorMessage name="issuer" component="span" /></Label>
+            <IssuerSearchField type="text" name="address" placeholder='0xK19...F56V' />
           </Flex>
         </Form>
-        <Heading onClick={this.toggleFilter} color='grayDark' cursor='pointer' fontSize={2} fontWeight={300} textAlign='center' >Filters</Heading>
         {
           this.state.filterIsOpen &&
-          <Flex>
-            <Box mr={15}>
-              <Label>Issuer <ErrorMessage name="issuer" component="span" /></Label>
-              <IssuerSearchField type="text" name="issuer" placeholder='Issuer' />
-            </Box>
-            <Box mr={15}>
-              <Label>Type <ErrorMessage name="type" component="span" /></Label>
-              <IssuerSearchField type="text" name="type" placeholder='EducationCredential...' />
-            </Box>
-            <Box mr={15}>
-              <Label>Issue Date After <ErrorMessage name="name" component="span" /></Label>
-              <IssuerSearchField type="date" name="dateIssueAfter" />
-            </Box>
-            <Box>
-              <Label>Issue Date Before <ErrorMessage name="name" component="span" /></Label>
-              <IssuerSearchField type="date" name="dateIssueBefore" />
-            </Box>
+          <Flex column color='white'>
+            <Switch
+            type="text" name="verifiedTwitter" label='Twitter Verified'
+            height={20} width={50}
+            setFieldValue={setFieldValue} setFieldTouched={setFieldTouched}/>
+            <Switch
+            type="text" name="verifiedFacebook" label='Facebook Verified'
+            height={20} width={50}
+            setFieldValue={setFieldValue} setFieldTouched={setFieldTouched}/>
+            <Switch
+            type="text" name="verifiedGithub" label='Github Verified'
+            height={20} width={50}
+            setFieldValue={setFieldValue} setFieldTouched={setFieldTouched}/>
           </Flex>
         }
+        {/* <Heading onClick={this.toggleFilter} color='white' underlineHover cursor='pointer' fontSize={2} fontWeight={300} textAlign='center' >Filters</Heading> */}
+        <ButtonFlat type="submit" disabled={this.props.isSubmitting} color='white' palette='green' mx={0} mt={20} width={1}>
+          Search
+        </ButtonFlat>
       </Box>
     )
   }
@@ -127,6 +127,6 @@ export default withFormik({
   /* Handle Form Submission */
   handleSubmit: (values, { props, ...form }) => {
 
-    console.log(values, 'submit action')
+
   }
 })(Formik)

@@ -4,8 +4,8 @@ import React from 'react'
 import { connect } from "react-redux";
 
 /* --- Local Dependencies --- */
-import data from 'store/departments/data/actions'
-import { fromData } from 'store/departments/selectors'
+import data from 'storeRedux/departments/data/actions'
+import { fromData } from 'storeRedux/departments/selectors'
 import { Flex } from 'atoms'
 import { VerifiableCredentialBasic } from 'containers'
 
@@ -46,7 +46,7 @@ class VerifiableCredentialQuery extends React.Component {
   /* Did Update */
   componentDidUpdate()
   {
-    console.log(this.props, 'query')
+
   }
 
   /* Will Mount */

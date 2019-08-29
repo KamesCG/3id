@@ -63,7 +63,7 @@ const Items = [
   {
     label: 'Verifiable Credentials',
     icon: iconDirectory,
-    to: '/dashboard/verifiable-credentials'
+    to: '/dashboard/verifiable-credentials/issue'
   },
   {
     label: 'Claims Search',

@@ -119,8 +119,24 @@ const BoxStyled = styled(Block)`
     }
   `};
 
+  ${is('inlineBlock')`
+    display: inline-block;
+  `};
+  ${is('inline')`
+    display: inline;
+  `};
+  ${is('borderBottom')`
+    border-radius: 0 0 8px 8px;
+  `};
+  ${is('borderTop')`
+    border-radius: 8px 8px 0 0;
+  `};
+
   ${is('rounded')`
     border-radius: 40px;
+  `};
+  ${is('circle')`
+    border-radius: 99999px;
   `};
 
   ${borders}

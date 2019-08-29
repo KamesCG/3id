@@ -1,8 +1,6 @@
 /* --- Global Dependencies --- */
 import { createStore, applyMiddleware, compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import { persistStore, persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
 
 /* --- Local Dependencies --- */
 import middlewares from '../departments/middlewares'
@@ -11,15 +9,11 @@ import sagas from '../departments/sagas'
 
 /* ---------------------------- Module Package ------------------------------ */
 const configureStore = (initialState, services = {}) => {
-  // Redux Configuration
   initialState = {}
   const middleware = [];
   const enhancers = [];
 
   middleware.push(...middlewares);
-
-  // Redux DevTools Configuration
-  const actionCreators = {};
 
   // Initalize Sagas
   const sagaMiddleware = createSagaMiddleware()
@@ -30,19 +24,11 @@ const configureStore = (initialState, services = {}) => {
   const enhancer = compose(...enhancers);
 
   // Create Store
-  // Redux Persister
-  const persistConfig = {
-    key: 'root',
-    storage,
-    blacklist: ['box', 'database', 'dialog', 'ipfs', 'ethers', 'form', 'routing', 'tokens', 'popover']
-  }
-  const persistedReducer = persistReducer(persistConfig, rootReducer)
-  const store = createStore(persistedReducer, initialState, enhancer);
-  const persistor = persistStore(store)
+  const store = createStore(rootReducer, initialState, enhancer);
   sagaMiddleware.run(sagas)
 
 
-  return { store, persistor }
+  return { store }
 }
 
-export default { configureStore }
+export default configureStore

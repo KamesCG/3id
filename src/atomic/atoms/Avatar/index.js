@@ -46,6 +46,8 @@ Image.propTypes = {
 Image.defaultProps = {
   border: '1px solid #FFF',
   borderRadius: 99999,
+  boxShadow: 1,
+  width: 48
 }
 
 export default Image

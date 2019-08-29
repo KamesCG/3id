@@ -1,10 +1,9 @@
 /* --- Global Dependencies --- */
 import React from 'react'
-import { ethers } from "ethers";
+import { ethers } from 'ethers';
 
 /* --- Local Dependencies --- */
 import { Emblems } from 'contracts'
-// import { Web3Context } from 'contexts/Web3' 
 
 export const Web3Context = React.createContext({
 
@@ -27,10 +26,10 @@ const networkRouting = async network => {
 }
 
 const Networks = {
-  "1": 'Mainnet',
-  "2": 'Ropsten',
-  "3": 'Kovan',
-  "4": 'Rinkeby',
+  '1': 'Mainnet',
+  '2': 'Ropsten',
+  '3': 'Kovan',
+  '4': 'Rinkeby',
 }
 
 
@@ -77,18 +76,21 @@ class Web3Wrapper extends React.Component {
   }
 
   async componentDidMount(){
+    console.log('loading web3')
     const provider = await networkRouting('metamask');
     const signer = provider.getSigner();
     const EmblemsContract = new ethers.Contract(Emblems.networks['4'].address, Emblems.abi, signer)
     
-    if(window.ethereum) {
-      this.state.setAddress(window.ethereum.selectedAddress)
-      this.state.setNetwork(window.ethereum.networkVersion)
-    }
+    // if (typeof window !== `undefined`) {
+      if(window.ethereum) {
+        this.state.setAddress('0xfA67ddE98346d6033f3Da0b157b70fe8434a48cE')
+        this.state.setNetwork(window.ethereum.networkVersion)
+      }
 
-    if(window.ethereum.isMetaMask) {
-      this.state.setMetaMaskInstalled(true)
-    }
+      if(window.ethereum.isMetaMask) {
+        this.state.setMetaMaskInstalled(true)
+      }
+    // }
 
     // Set Account Information
     this.setState({

@@ -1,7 +1,4 @@
 var plugins = [{
-      plugin: require('/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/node_modules/gatsby-plugin-stripe/gatsby-ssr'),
-      options: {"plugins":[],"async":true},
-    },{
       plugin: require('/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
@@ -9,6 +6,9 @@ var plugins = [{
       options: {"plugins":[],"name":"gatsby-starter-default","short_name":"starter","start_url":"/","background_color":"#663399","theme_color":"#663399","display":"minimal-ui","icon":"src/images/gatsby-icon.png"},
     },{
       plugin: require('/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      options: {"plugins":[]},
+    },{
+      plugin: require('/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/gatsby-ssr'),
       options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:

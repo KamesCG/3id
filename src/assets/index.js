@@ -1,12 +1,12 @@
 /* --- Local Dependencies --- */
-import devices from './devices.js'
+import icons from './icons.js'
 import images from './images.js'
 import products from './products.js'
 import svg from './svg.js'
 
 const assets = {
-  devices: {
-    ...devices
+  icons: {
+    ...icons
   },
   images: {
     ...images

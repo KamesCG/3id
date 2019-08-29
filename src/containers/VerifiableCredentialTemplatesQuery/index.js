@@ -5,8 +5,8 @@ import { connect } from "react-redux";
 import { Link } from "@reach/router";
 
 /* --- Local Dependencies --- */
-import data from 'store/departments/data/actions'
-import { fromData } from 'store/departments/selectors'
+import data from 'storeRedux/departments/data/actions'
+import { fromData } from 'storeRedux/departments/selectors'
 import { Box, ButtonFlat, Button, Flex, Heading, HorizontalRule, Paragraph, Span } from "atomic";
 import { Modal, Panel } from 'components'
 import { VerifiableCredentialBasic } from 'containers'
@@ -105,7 +105,7 @@ const VerifiableCredentialTemplate = ({ alias, name, claim_fields, description, 
   </Box>
 
   <Box>
-  <Panel modal={<div>testing</div>} >
+  <Panel modal={<VerifiableCredentialTemplateFull name={name} description={description} type={type} claims={claim_fields}/>} >
     <ButtonFlat sm uppercase palette='blue'>
       View Template
     </ButtonFlat>
@@ -117,3 +117,25 @@ const VerifiableCredentialTemplate = ({ alias, name, claim_fields, description, 
   </Panel>
   </Box>
 </Flex>
+
+
+const VerifiableCredentialTemplateFull = ({ alias, name, claims, description, type }) =>
+<Box>
+  <Box borderBottom='1px solid' borderColor='gray' py={20}>
+    <Heading color='blue' fontSize={[4,4]}>
+      {name}
+    </Heading>
+    <Paragraph fontSize={[2]}>
+      <strong>Type:</strong> {type}
+    </Paragraph>
+    <Paragraph fontSize={[2]}>
+      <strong>Description:</strong> {description}
+    </Paragraph>
+  </Box>
+  <Heading color='blue' fontSize={[3]} mt={15}>
+    Claim Fields
+  </Heading>
+  <ul>
+    {claims && claims.map(claim => <li><Span fontSize={[2]}><strong>{claim.name} </strong>: {claim.description}</Span></li>)}
+  </ul>
+</Box>

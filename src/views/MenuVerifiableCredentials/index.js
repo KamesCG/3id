@@ -57,8 +57,18 @@ export default props =>
 const Items = [
   {
     icon: iconBilling,
-    label: 'Generate',
+    label: 'Generate Credential',
     to: '/dashboard/verifiable-credentials/issue'
+  },
+  {
+    icon: iconBilling,
+    label: 'Issuers',
+    to: '/dashboard/verifiable-credentials/issuers'
+  },
+  {
+    icon: iconBilling,
+    label: 'Add Issuers',
+    to: '/dashboard/verifiable-credentials/issuers/add'
   },
   {
     icon: iconDashboard,
@@ -69,10 +79,5 @@ const Items = [
     icon: iconDashboard,
     label: 'Create Template',
     to: '/dashboard/verifiable-credentials/template/create'
-  },
-  {
-    icon: iconBilling,
-    label: 'Issuers',
-    to: '/dashboard/verifiable-credentials/issuers'
   },
 ]

@@ -5,29 +5,19 @@ const theme = {
     crimson: 'linear-gradient(to right, #642B73, #C6426E)',
     colorWheel: 'linear-gradient(to right, #F4D03F,  #16A085, #e35d5b)',
   },
-  fonts: {
-    body: "Roboto,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif",
-    heading: "Akrobat,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif",
-    button: "Roboto,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif"
-  },
-  fontFamily: {
-    default: "Roboto,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif",
-    heading: "Akrobat,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif",
-    button: "Roboto,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif"
-  },
-  fontSizes: [
-    10, 11, 14, 18, 24, 36, 48, 72, 92, 118
-  ],
   palette: {
     primary: ['#2855de'],
     blue: ['#5a67c4', '#4160af', '#2855de', '#92aff8'],
-    green: ['#34bfa3', '#27b396'],
+    green: ['#3edc78', '#2fc867'],
+    white: ['#FFF'],
     rust: ['#b34a4a'],
     orange: ['#ffa319', '#eb9617'],
-    purple: ['#4e3d63', '#b294d8'],
+    // purple: ['#4e3d63', '#b294d8'],
+    purple: ['#9983AD', '#8068A3', '#8068A3', '#252C68'],
     turquoise: ['#3ba0ac', '#00eec4', '#00d2ad', '#00b49d', '#009885'], //https://www.color-hex.com/color-palette/64616
-    red: ['#df1b1b', '#d62121', '#ce2525', '#c72c2c', '	#ba3030'], // https://www.color-hex.com/color-palette/7080
-    grayscale: ['#212121', '#616161', '#9e9e9e', '#bdbdbd', '#e0e0e0', '#ffffff'],
+    red: ['#d12c51', '#bb2445', '#a21232', '#c72c2c', '	#ba3030'], // https://www.color-hex.com/color-palette/7080
+    // gray: [ '#e0e0e0', '#212121', '#616161', '#9e9e9e', '#bdbdbd', '#ffffff'],
+    gray: ['#e9e9e9', '#d4d4d4', '#9a9a9a', '#707070', '	#454545'],
     twitter: ['#5578eb', '#2754e6'],
     google: ['#fd397a', '#fc0758'],
     facebook: ['#5867dd', '#2e40d4']
@@ -39,7 +29,7 @@ const theme = {
     tertiary: '#F45C43',
 
     // Generic color Styles
-    blue:'#5b71b8',
+    blue:'#3a95ee',
     blueLight:'#466fec',
     blueZodiac: '#3f4257',
     charcoal: '#4a4a4a',
@@ -70,27 +60,20 @@ const theme = {
 
     // Generic Gradient Styles
     black: ['#232526', '#414345'],
+    blueOcean: ['#56ccf2','#3a95ee','#2f80ed'],
+    bluePurple: ['#2583b0', '#7324cc'],
     blueZodiac: ['#3f4257', '#333965'],
-    blueOcean: ['#3f4e90', '#5a68a4' ],
-    // blue: ['#2855de', '#466fec'],
     blue: ['#46a7ec', '#282ede'],
-    blurple: ['#0599f7', '#680294'],
     charcoal: ['#283048', '#859398'],
-    cherry: ['#EB3349', '#F45C43'],
-
-    // green: ['#00AFA6', '#00C9A7'],
     green: ['#a1c900', '#00af4e'],
-    moss: ['#e5ed68' ,'#45cc81', '#00C9A7'],
-    gray: ['#f7f5f5', '#f4f6f6'], 
-    purple: ['#4E3DF5', '#6832A2'],
-    // orange: ['#ff5e3a', '#ff5e3a'],
+    // gray: ['#e7dfdf', '#f0f0f0'],
+    // gray: ['#f4f4f4', '#dddfe6'],
+    gray: ['#f4f4f4', '#f2f2f2'],
+    purple: ['#7d3eb4', '#e430ad'],
     turquoise: ['#3ba0ac', '#3ba0ac'],
     orange: ['#ffa319', '#fb3306'],
     orangish: ['#ffb123', '#e9a100'],
     red: ['#ef473a', '#cb2d3e'],
-    sunrise: ['#f6d365', '#fda085', '#f6d365'],
-    sunset: ['#c521b6', '#fda919', ],
-    bluePurple: ['#2583b0', '#7324cc'],
     white: ['#FFF','#fefefe'],
   },
   textShadow: {
@@ -132,13 +115,14 @@ const theme = {
     
   },
   shadows: {
-    0: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
-    1: '0 2px 4px rgba(0,0,0,0.14), 0 2px 3px rgba(0,0,0,0.20)',
-    2: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
-    3: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
-    4: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
+    0: '0 1px 3px rgba(0,0,0,0.09), 0 1px 2px rgba(0,0,0,0.14)',
+    1: '0 2px 4px rgba(0,0,0,0.04), 0 2px 3px rgba(0,0,0,0.10)',
+    2: '0px -3px 6px rgba(139, 139, 136, 0.09), 0px 7px 8px rgba(131, 131, 131, 0.28)',
+    3: '2px 6px 9px 0px rgba(174, 174, 174, 0.29), 0px 6px 10px 0px rgba(0,0,0,0.12)',
+    // 4: '0 14px 28px rgba(0,0,0,0.05), 0 10px 10px rgba(0,0,0,0.12)',
+    4: '0 7px 14px 0 rgba(60,66,87, .12), 0 3px 6px 0 rgba(0,0,0, .12)',
     5: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
-    6: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
+    6: '0 14px 28px rgba(0,0,0,0.05), 0 10px 10px rgba(0,0,0,0.05)',
     7: '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)',
     8: '0px 2px 20px rgba(0, 0, 0, 0.13), 2px 2px 20px rgba(0, 0, 0, 0)',
     float: '2px 12px 8px -8px #373737a3, 0px 38px 20px 3px #0c0d0d14',
@@ -179,7 +163,20 @@ const theme = {
     insetLeftLight: [
       'inset 10px 0px 15px 0px rgba(0, 0, 0, 0.24)',
     ],
-  }
+  },
+  fonts: {
+    body: "Open Sans' ,-apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
+    heading: "Akrobat,'Segoe UI', Roboto, Oxygen, Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif",
+    button: "Open Sans' ,-apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
+  },
+  fontFamily: {
+    default: "Roboto,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif",
+    heading: "Akrobat,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif",
+    button: "Roboto,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif"
+  },
+  fontSizes: [
+    10, 12, 14, 16, 22, 32, 48, 72, 92, 118
+  ],
 }
 
 export default theme

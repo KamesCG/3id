@@ -1,10 +1,12 @@
 /* --- Global Dependencies --- */
 import React from 'react'
 import idx from 'idx'
+import Cookie from 'js-cookie'
 import { withCookies } from 'react-cookie';
 import GraphQLClient from 'settings/graphql'
 
 /* --- Local Dependencies --- */
+import { shortenAddress } from 'helpers/ethereum'
 import { ButtonFlat, Flex, Span } from 'atoms'
 import { Web3Context } from 'contexts/Providers/Web3Wrapper'
 
@@ -30,9 +32,7 @@ class LoginEthereum extends React.Component {
   }
 
   async logout () {
-    console.log(this.props.cookies)
-    this.props.cookies.remove('jwt')
-    console.log(this.props.cookies)
+    Cookie.remove('jwt')
     this.setState({
       isAuthenticated: false,
       isChecked: false,
@@ -98,10 +98,7 @@ class LoginEthereum extends React.Component {
         isAuthenticated: true,
         JWT: jwt
       })
-      // CookieSave(this.props.cookies, jwt)
-      GraphQLClient.setHeaders({
-        authorization: `Bearer ${jwt}`
-      })
+      Cookie.set('jwt', jwt)
     }
   };
 
@@ -131,11 +128,9 @@ class LoginEthereum extends React.Component {
   render(){
     return(
       this.state.isAuthenticated
-      ? <Flex column align='flex-end'>
-          <Span fontSize={[1]} fontWeight={700} >{this.state.address}</Span>
-          <Span onClick={this.logout} cursor='pointer' fontSize={[1]}>	Logout</Span>
-        </Flex>
-      : <ButtonFlat palette='blue' onClick={this.signChallenge}>Login</ButtonFlat>
+      ? 
+        <Span onClick={this.logout} cursor='pointer' fontSize={[1]}>Logout <strong>☒</strong></Span>
+      : <ButtonFlat sm palette='blue' onClick={this.signChallenge}>Login</ButtonFlat>
     )
   }
 }
@@ -152,12 +147,11 @@ const CookieSave = (cookies, jwt) => {
 
 const Login = props => 
 <Flex>
-  {console.log(props, 'cokporp')}
   <Web3Context.Consumer>
     { web3 => (
       web3.address && web3.provider
       ? <LoginEthereum address={web3.address} provider={web3.provider} cookies={props.cookies} />
-      : <Span fontSize={1}>Enable Web3</Span>
+      : <Span fontSize={1}>Enable Web3{console.log(web3, 'web3')}</Span>
     )}
   </Web3Context.Consumer>
 </Flex>

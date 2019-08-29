@@ -9,13 +9,22 @@ module.exports = {
     author: `@kamescg`,
   },
   plugins: [
-    // Stripe Integration
+    
+    // Strapi
     {
-      resolve: `gatsby-plugin-stripe`,
+      resolve: `gatsby-source-strapi`,
       options: {
-        async: true,
+        apiURL: `http://localhost:1337`,
+        queryLimit: 1000, // Default to 100
+        contentTypes: [`issuer`, 'documentation'],
+        // Possibility to login with a strapi user, when content types are not publically available (optional).
+        loginData: {
+          identifier: "",
+          password: "",
+        },
       },
     },
+
     // {
     //   resolve: `gatsby-plugin-env-variables`,
     //   options: {
@@ -36,13 +45,18 @@ module.exports = {
           "containers": path.resolve(__dirname, 'src/containers'),
           "contexts": path.resolve(__dirname, 'src/contexts'),
           "contracts": path.resolve(__dirname, 'src/contracts'),
+          "helpers": path.resolve(__dirname, 'src/helpers'),
           "views": path.resolve(__dirname, 'src/views'),
           "fields": path.resolve(__dirname, 'src/fields'),
           "forms": path.resolve(__dirname, 'src/forms'),
           "settings": path.resolve(__dirname, 'src/settings'),
           "services": path.resolve(__dirname, 'src/services'),
+          "static": path.resolve(__dirname, 'src/static'),
           "storeRedux": path.resolve(__dirname, 'src/store'),
           "theme": path.resolve(__dirname, 'src/theme'),
+          "Box": path.resolve(__dirname, 'src/atomic/atoms/Box'),
+          "Flex": path.resolve(__dirname, 'src/atomic/atoms/Flex'),
+          
         },
         extensions: []
       }

@@ -1,9 +1,13 @@
 /* --- Global Dependencies --- */
+import idx from 'idx'
 import React from 'react'
+import { connect } from 'react-redux';
 import { withFormik } from 'formik';
 import { Form, Field, ErrorMessage } from 'formik';
 
 /* --- Local Dependencies --- */
+import data from 'storeRedux/departments/data/actions'
+import { fromData } from 'storeRedux/departments/selectors'
 import { Box, Button, Flex, Heading, Span } from 'atoms'
 
 /* --- Styled Components --- */
@@ -75,9 +79,8 @@ class Formik extends React.Component {
       <Box {...this.props.styled}>
         <Form onSubmit={this.props.handleSubmit} style={{width: '100%'}} >
           <Flex>
-            <SearchField type="text" name="name" placeholder='Subject Address or Decentralized Identifier...' />
-            
-  
+            <IssuerSearchField type="text" name="subject" placeholder='Subject Address or Decentralized Identifier...' />
+
             <Button type="submit" disabled={this.props.isSubmitting} color='white' gradient='blue' borderRadius='0 10px 10px 0' mx={0} width={150}>
               Search
             </Button>
@@ -110,8 +113,46 @@ class Formik extends React.Component {
   }
 }
 
+/* -- Global State -- */
+const mapStateToProps = (state, props) => ({
+  request: fromData.get(state,  `query|verifiableCredentialTemplates`),
+});
+
+
+const mapDispatchToProps = (dispatch, props) => ({
+  queryRequest: (query) =>dispatch(data.queryRequest('REQUEST')(
+    query,
+    {
+      delta: 'query|verifiableCredentialTemplates',
+    }
+  )),
+  mutateRequest: (mutation) =>dispatch(data.mutateRequest('REQUEST')(
+    mutation,
+    {
+      delta: 'mutate|credential',
+    }
+  ))
+});
+
+const MutationGenerate = ({ issuer, subject,}) =>
+`
+{
+  getVerifiableCredential(
+    iss: "${issuer}"
+    sub: "${subject}
+  ) {
+    iss
+    sub
+    claims {
+      key
+      value
+    }
+  }
+}
+`
+
 /* --- Form Configuration --- */
-export default withFormik({
+const FormVerifiableCredentialSearch = withFormik({
   /* Map Props to Field Values */
   mapPropsToValues: props => ({
     name: '',
@@ -130,3 +171,5 @@ export default withFormik({
     console.log(values, 'submit action')
   }
 })(Formik)
+
+export default connect(mapStateToProps, mapDispatchToProps)(FormVerifiableCredentialSearch)
