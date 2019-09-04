@@ -1,0 +1,547 @@
+* {
+  box-sizing: border-box;
+  /* transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1), background-color 250ms ease-out, color 250ms ease-out, border-color 250ms ease-out, top 350ms ease-out, width 250ms ease-out; */
+  transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1), background-color 250ms ease-out, color 50ms ease-out, border-color 250ms ease-out, width 250ms ease-out;
+}
+
+.asideLeft, .asideRight {
+  -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+  transition: width 2s, height 4s;
+}
+
+.main {
+  -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+  transition: width 2s, height 4s;
+}
+
+body{
+  background: #fcfcfc;
+  background-image:  linear-gradient(180deg ,#3f4e90,#5a68a4);
+  /* background-image:  linear-gradient(180deg, #FFF, #fcfcfc); */
+  background-image: linear-gradient(180deg, #ffffff, #f8f9f9);
+  color: #6a6d7f;
+  font-family: 'Roboto',-apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen,Ubuntu,Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+}
+
+#root {
+  overflow-x: hidden;
+}
+
+header,
+main,
+footer {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+}
+header {
+  z-index: 15;
+}
+main {
+  z-index: 20;
+}
+
+footer {
+  background-color: #999;
+}
+
+aside {
+    overflow-y: hidden;
+}
+
+img {
+  height: auto;
+  max-height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+strong {
+  letter-spacing: 0.045em;
+}
+
+hr {
+  border-color: #e3e3e3;
+  border-style: solid;
+  margin: 3px 0;
+}
+
+p {
+  font-size: 12px;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+
+.inner-content {
+  display: none;
+  opacity: 0;
+  -webkit-transition: 2s 2s ease;
+  -moz-transition: 2s 2s ease;
+  transition: 2s ease !important;
+  -webkit-transition-delay: 10s !important;
+  transition-delay: 10s;
+}
+
+p, a, span, label, button {
+  font-family: Roboto, 'Segoe UI', Roboto ,Oxygen ,Cantarell, Ubuntu, 'Open Sans','Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+  z-index: 10;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Ubuntu, Roboto, 'Segoe UI', Roboto ,Oxygen ,Cantarell, 'Open Sans','Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.025em;
+  margin: 0;
+  position: relative;
+  transition: all 0.12s ease;
+  z-index: 10;
+}
+
+h1 {
+  font-size: 2.35rem;
+  font-weight: lighter;
+  margin-bottom: 12.5px;
+}
+h2 {
+  font-size: 1.85rem;
+  font-weight: normal;
+  margin-bottom: 8.5px;
+}
+h3 {
+  font-size: 1.55rem;
+  font-weight: 700;
+  margin-bottom: 5.5px;
+}
+
+h4 {
+  font-size: 1.35rem;
+  font-weight: bold;
+  margin-bottom: 4.5px;
+}
+
+h5 {
+  font-size: 1.15rem;
+  font-weight: normal;
+  margin-bottom: 3.5px;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+li {
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  align-items: center;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  outline: none;
+  position: relative;
+  text-decoration: none;
+  transition: background-color 250ms ease-out, color 250ms ease-out, border-color 250ms ease-out,top 350ms ease-out;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  white-space: nowrap;
+}
+
+button:active {
+  top: 2px;
+  outline: none;
+}  
+
+img {
+  max-width: 100%;
+}
+
+blockquote, 
+blockquote * {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.2em;
+  position: relative;
+}
+blockquote cite {
+  font-size: 0.9em;
+  font-style: normal;
+}
+
+blockquote::after {
+  content: '"';
+  font-size: 5.5em !important;
+  font-weight: 700;
+  position: absolute;
+  right: -20px;
+  top: -40px;
+  opacity: 0.2;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 4.5px;
+  margin-top: 15px;
+}
+
+fieldset {
+  border: 1px solid #d1d1d3;
+}
+
+input[type='checkbox'] + label { 
+  display: inline-block;
+  margin-top: 0;
+}
+
+input[type='checkbox'] + label + input[type='checkbox']  { 
+  margin-left: 15px;
+}
+
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='tel'],
+input[type='text'] {
+  border: none;
+  border-color: #f5f5f5;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(245, 243, 243, 0.05), 0 1px 2px rgba(0,0,0,0.15);
+  color: #000;
+  /* height: 37.5px; */
+  font-size: 100%;
+  margin-bottom: 5px;
+  padding: 8px;
+  width: 100%;
+}
+
+select {
+  width: 100%;
+}
+
+/* React Select */
+select,
+.select,
+.select input {
+  color: #000 !important;
+  min-height: 35px;
+  position: relative;
+  transition: none !important;
+  z-index: 100;
+}
+.select .menu {
+  z-index: 1000;
+}
+
+.select [class*="singleValue"] {
+  color: #000 !important;
+  
+}
+
+.select + label + .select {
+  z-index: calc(50 - var(--zSelect));
+}
+
+.select input[type='text'] {
+  box-shadow: none;
+  height: unset;
+  width: unset;
+  margin-bottom: unset;
+}
+
+.select.small {
+  height: 25px;
+}
+
+.select.small [class*="singleValue"] {
+  margin-top: 8px
+}
+
+textarea {
+  border: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  min-height: 80px;
+  padding: 20px;
+  width: 100%;
+}
+
+.radios > * {
+  font-size: 12px;
+  padding: 8px !important;
+}
+
+.radios > * > * > *:nth-child(2) {
+  padding: 0 !important;
+  border: none;
+  margin-top: 2px;
+}
+.radios > * > * > *:nth-child(2) > * {
+  margin-top: -2px;
+  margin-left: -2px;
+}
+/* Components */
+.Popover {
+  z-index: 1000;
+}
+
+
+.ReactModalPortal {
+  position: relative;
+  z-index: 1000;
+}
+
+
+[class^=dashboard__MainOuter],
+[class^=dashboard__MainOuter] > div {
+  height: 100%;
+}
+
+[role=group] {
+  height: 100%;
+  width: 100%;
+}
+
+/* Popover */
+
+.popover {
+  overflow: visible !important;
+  z-index: 1000;
+}
+
+/* React Geosuggest */
+.geosuggest {
+  text-align: left;
+}
+
+.geosuggest__suggests {
+  background: #FFF;
+  border-radius: 7px;
+  box-shadow: 2px 6px 9px 0px rgba(174, 174, 174, 0.29), 0px 6px 10px 0px rgba(0,0,0,0.12);
+  list-style-type: none;
+  padding: 10px;
+  position: absolute;
+  margin-top: 40px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  /* padding: 0; */
+}
+.geosuggest__suggests--hidden {
+  display: none;
+}
+
+
+.geosuggest__input {
+  width: 100%;
+  border: 2px solid transparent;
+  box-shadow: 0 0 1px #3d464d;
+  padding: .5em 1em;
+  -webkit-transition: border 0.2s, box-shadow 0.2s;
+          transition: border 0.2s, box-shadow 0.2s;
+}
+.geosuggest__input:focus {
+  border-color: #f5f5f5;
+  /* box-shadow: 0 0 0 transparent; */
+}
+
+
+.geosuggest__item--active {
+  background: #267dc0;
+  color: #fff;
+}
+
+.geosuggest__input {
+  /* border-bottom: 1px solid #28bd8a !important; */
+  outline: none;
+  height: 45px;
+}
+.geosuggest__input:focus {
+
+  box-shadow: 0  3px #28bd8a;
+}
+
+/**
+ * A geosuggest item
+ */
+ .geosuggest__item {
+  font-size: 18px;
+  font-size: 1rem;
+  padding: .5em .65em;
+  cursor: pointer;
+}
+.geosuggest__item:hover,
+.geosuggest__item:focus {
+  background: #f5f5f5;
+}
+.geosuggest__item--active {
+  background: #267dc0;
+  color: #fff;
+}
+.geosuggest__item--active:hover,
+.geosuggest__item--active:focus {
+  background: #ccc;
+}
+.geosuggest__item__matched-text {
+  font-weight: bold;
+}
+
+.react-phone-number-input {
+  border: 1px solid #f5f5f5;
+  border-radius: 7px;
+  box-shadow: rgba(245, 243, 243, 0.05) 0px 1px 3px, rgba(0, 0, 0, 0.15) 0px 1px 2px;
+  background-image: linear-gradient(180deg,#ffffff,rgba(247,247,249,.65));
+}
+.react-phone-number-input__country--native {
+  background: #f6f6f6;
+  box-shadow: rgba(0, 0, 0, 0.1) 4px 0px 5px -2px;
+  border-radius: 7px 0 0 7px;
+  padding: 0 10px;
+}
+
+.react-phone-number-input__input {
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  height: 48px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ================ */
+/* React Tabs
+/* ================ */
+.react-tabs {
+  margin-bottom: 40px;
+}
+.react-tabs__tab {
+  margin: 0 !important;
+}
+
+.tabs.simple .react-tabs__tab-list {
+  border-bottom: none;
+}
+
+.tabs.simple .react-tabs__tab {
+  border: none !important;
+  opacity: 0.8;
+  outline: none !important;
+}
+
+.tabs.simple .react-tabs__tab:hover {
+  font-weight: 700;
+}
+.tabs.simple .react-tabs__tab:focus {
+  border: none;
+  outline: none;
+}
+.tabs.simple.white .react-tabs__tab--selected {
+  background: none;
+  color: #FFF;
+  font-weight: 700;
+}
+
+.tabs.simple.white .react-tabs__tab {
+  color: #FFF !important;
+}
+
+/* ================ */
+/* Datepicker
+/* ================ */
+.react-datepicker-wrapper,
+.react-datepicker__input-container {
+  width: 100%;
+}
+
+.react-datepicker-popper {
+  z-index: 250;
+}
+/* ================ */
+/* React Table   
+/* ================ */
+.rt-tr {
+  padding: 10px 0;
+}
+.rt-thead {
+  box-shadow: 0px -1px 5px 2px rgb(183, 183, 183);
+  z-index: 100;
+}
+.rt-tr.-odd {
+  background: #fff;
+}
+.rt-tr.-even {
+  background: #f3f7ff;
+}
+.rt-tr.-even:hover {
+  background: #f1f5f7;
+}
+
+/* Customers Table */
+.table.customers .rt-tr {
+  padding: 10px 0;
+}
+.table.customers .rt-thead .rt-resizable-header-content {
+  font-weight: 700;
+  text-align: left;
+}
+.table.customers .rt-resizable-header {
+  padding: 8px
+}
+.table.customers .rt-thead.-header {
+  box-shadow: 0px -1px 5px 2px rgb(183, 183, 183)
+}
+.table.customers .rt-tr.-even {
+  background: #f3f7ff;
+}
+.table.customers .rt-tr.-even:hover {
+  background: #f1f5f7;
+}
+
+.ReactTable .rt-tbody {
+  margin-left: 1px;
+}
+
+.rt-thead .rt-tr {
+  padding: 0
+}
+.rt-thead .rt-resizable-header-content {
+  font-weight: 700;
+  padding: 7px 0;
+}
+
+.rt-td {
+  align-self: center;
+}
+
+.ReactTable .rt-tbody .rt-td {
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.ReactTable .rt-thead.-header {
+  box-shadow: 0 -1px 6px 0 rgba(0, 0, 0, 0.58);
+}

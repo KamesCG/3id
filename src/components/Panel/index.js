@@ -14,11 +14,14 @@ const customStyles = {
     bottom                : '0',
     overflow             :'visible',
     padding: 0,
+  },
+  overlay: {
+    backgroundColor: 'rgba(78, 78, 78, 0.5)'
   }
 };
 
 
-class VerifiableCredentialBasic extends React.Component {
+class Panel extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -44,13 +47,18 @@ class VerifiableCredentialBasic extends React.Component {
   }
 
   render() {
+    const { label, passModalClose } = this.props
     return (
       <>
       <span onClick={this.openModal}>{this.props.children}</span>
       <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} style={customStyles}>
         <Box p={20} height='100%' width={620} {...this.props.styled} >
           <PerfectScrollbar>
-            {this.props.modal}
+            {
+              passModalClose
+              ? React.cloneElement(this.props.content || this.props.modal, {closeModal: this.closeModal})
+              : this.props.content || this.props.modal
+            }
           </PerfectScrollbar>
         </Box>
       </Modal>
@@ -59,4 +67,4 @@ class VerifiableCredentialBasic extends React.Component {
   }
 }
 
-export default VerifiableCredentialBasic
+export default Panel

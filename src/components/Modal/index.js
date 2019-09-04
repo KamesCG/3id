@@ -49,17 +49,21 @@ class VerifiableCredentialBasic extends React.Component {
   }
 
   render() {
-    const { label } = this.props
+    const { label, passModalClose } = this.props
     return (
       <>
       <span onClick={this.openModal}>{this.props.children}</span>
       <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} style={customStyles}>
-        <Flex alignCenter between bg='blue' color='white' p={10}>
+        <Flex alignCenter between gradient='purpink' gradientDir={75} color='white' p={10}>
           <Span fontSize={[3]}>{label}</Span>
           <Span onClick={this.closeModal} fontSize={[2]} fontWeight={700} pointer>X</Span>
         </Flex>
         <Box boxShadow={1} borderRadius={10} p={25} width={620} {...this.props.styled} >
-          {this.props.modal}
+            {
+              passModalClose
+              ? React.cloneElement(this.props.content || this.props.modal, {closeModal: this.closeModal})
+              : this.props.content || this.props.modal
+            }
         </Box>
       </Modal>
       </>

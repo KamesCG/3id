@@ -1,29 +1,68 @@
 /* --- Global Dependencies --- */
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "@reach/router";
 import styled from 'styled-components'
 
 /* --- Local Dependencies --- */
-import { Box, Flex, Image } from "atoms";
-
-import { iconBilling, iconBuilding, iconCampaign, iconDashboard, iconDirectory } from 'assets/images'
+import { Box, Flex, Image, Span } from "atoms";
+import { Items } from 'static/menu'
 
 /* ------- Styled Component ------- */
 
 const LinkStyled = styled(Link)`
   color: inherit;
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: normal;
+  margin-left: 8px;
   text-decoration: none;
 `
 
-const LinkStyledChild = styled(Link)`
-  color: inherit;
-  font-size: 10px;
-  text-decoration: none;
-  opacity: 0.75;
+const ChildContainer = styled(Box)`
   padding: 10px 42.5px;
+
+  & .grandchild {
+    opacity: 0.75;
+  }
+
+  & .grandchild:hover {
+    opacity: 1;
+  }
+
   &:hover {
     background: #1b1b28;
+    opacity: 1;
+
+    & .child {
+      opacity: 1;
+    }
+  
+  }
+
+  & ul {
+    margin: 0;
+    margin-top: 10px;
+    padding-left: 25px;
+  }
+
+  & li {
+    opacity: 0.75;
+    font-size: 12px;
+    margin-bottom: 0;
+    margin-top: 7px;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+`
+const LinkStyledChild = styled(Link)`
+  color: inherit;
+  display: block;
+  font-size: 14px;
+  margin-left: 8px;
+  text-decoration: none;
+  opacity: 0.75;
+  &:hover {
     opacity: 1;
   }
 `
@@ -36,48 +75,52 @@ const StyledMenuItem = styled(Flex)`
   }
 `
 
-const MenuItem = ({ children, label, to,  icon }) =>
-<Flex column>
-  <StyledMenuItem align='center' py={10} px={10}>
-    <Image src={icon} mr={10} width={22.5} />
-    <LinkStyled to={to}>{label}</LinkStyled>
-  </StyledMenuItem>
-  { children && children.map( c => <LinkStyledChild to={c.to}>{c.label}</LinkStyledChild>)}
-</Flex>
+const MenuItem = ({ children, label, to,  icon }) => {
+const [isOpen, setOpen] = useState(false);
+return (
+  <Flex column>
+    <StyledMenuItem align='center' py={10} px={10} >
+      {icon && icon}
+      <LinkStyled to={to}>{label}</LinkStyled>
+      { children &&
+        <Span pointer width={30}  alignSelf='flex-end' ml='auto' onClick={()=>setOpen(!isOpen)}>
+          <Span fontSize={[1]} transform={isOpen ? 'rotate(90deg)' : ''}>{isOpen? '↴' : '▶'}</Span>
+        </Span>
+      }
+    </StyledMenuItem>
+    { isOpen && children &&
+      children.map( c =>
+      <ChildContainer>
+        <Flex alignCenter mb='8px'>
+          {c.icon && c.icon}
+          <LinkStyledChild className='child' to={c.to}>
+            {c.label}
+          </LinkStyledChild>
+        </Flex>
+          <Flex column>
+            { c.children &&
+              <Flex column ml='8px'>
+                {c.children.map( i =>
+                  <Link to={i.to}>
+                    <Flex alignCenter className='grandchild' my='4px'>
+                      {i.icon}
+                      <Span fontSize={1} ml='8px'>{i.label}</Span>
+                    </Flex>
+                  </Link>
+                )}
+              </Flex>
+            }
+          </Flex>
+      </ChildContainer>)
+    }
+  </Flex>
+)}
 
 /* ------- Component ------- */
 export default props => 
-<Flex column >
+<Flex column overflow='auto' height='90%' >
   {
     Items.map( item => <MenuItem {...item}/>)
   }
 </Flex>
 
-
-const Items = [
-  {
-    icon: iconDashboard,
-    label: 'Dashboard',
-    to: '/dashboard'
-  },
-  {
-    label: 'Verifiable Credentials',
-    icon: iconDirectory,
-    to: '/dashboard/verifiable-credentials/issue'
-  },
-  {
-    label: 'Claims Search',
-    icon: iconBilling,
-    to: '/dashboard/claims'
-  },
-  {
-    label: 'People',
-    icon: iconDirectory,
-    to: '/dashboard/people'
-  },
-  {
-    label: 'Role Management',
-    icon: iconDirectory,
-    to: '/dashboard/roles'
-  },
-]

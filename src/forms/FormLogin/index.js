@@ -6,10 +6,9 @@ import { withFormik } from 'formik';
 import { Field, Form, ErrorMessage } from 'formik';
 
 /* --- Local Dependencies --- */
-import { Button, ButtonFlat, Flex, Span } from 'atoms'
-import HorizontalRule from '../../atomic/atoms/HorizontalRule';
+import { Button, ButtonFlat, Flex, HorizontalRule, Span } from 'atoms'
 // import { Input } from 'fields'
-
+import { LoginProvider } from 'containers'
 
 const Input = styled(Field)`
   border: none;
@@ -104,9 +103,9 @@ class Formik extends React.Component {
       </Form>
       <HorizontalRule or my={15}/>
       <Flex between mt={20}>
-        <ButtonFlat palette='google'>Google</ButtonFlat>
-        <ButtonFlat palette='twitter'>Twitter</ButtonFlat>
-        <ButtonFlat palette='facebook'>Facebook</ButtonFlat>
+        <LoginProvider provider='google'/>
+        <LoginProvider provider='twitter'/>
+        <LoginProvider provider='facebook'/>
       </Flex>
       </Flex>
     )

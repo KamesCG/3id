@@ -1,74 +1,96 @@
 /* --- Global Dependencies --- */
-import React from 'react'
+import idx from 'idx'
+import React from "react";
 import { connect } from 'react-redux';
 
 /* --- Local Dependencies --- */
-import { Box, Button, ButtonFlat, Heading, Flex, Span } from 'atoms'
-import { FormPeopleSearch } from 'forms'
-import { VerifiableCredentialQuery, PersonProfile } from 'containers'
+import Routes from 'routes/people'
+import MenuItems from 'static/menus/issuers'
+import {
+  BackgroundGradient, ButtonFlat,
+  Box, Flex, Heading, Span
+} from "atoms";
+import { MenuSidebar } from 'components'
 
-/* --- React Component --- */
-class ClaimsSearch extends React.Component {
+/* ------- Component ------- */
+class Campaign extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      name: "People",
-      isLoading: true
+      isLoading: false
     }
   }
-
+  
   // Mounted
   componentDidMount()
   {
 
   }
-  
-
   // Updated
   componentDidUpdate()
   {
 
   }
 
-  // Error Caught
-  componentDidCatch()
-  {
-
+  // Error Catched
+  componentDidCatch() {
+    
   }
 
-  
-
   render(){
-    return(
-      <Flex column  height='100%'>
-        <Flex align='center' between boxShadow={0} gradient='white' p={15}>
-          <Heading color='turquoise' fontSize={[3,3,4]} fontWeight={300} mb={0} >
-            {this.state.name}
-          </Heading>
+    const { isLoading } = this.state
+    return( 
+      isLoading
+      ? <Flex center column fill>Loading...</Flex>
+      :<>
+      <Flex column justifyCenter height={100}>
+        <BackgroundGradient gradient='blue' gradientDir={135} />
+        <Flex alignCenter between px={25}>
+          <Flex column color='white'>
+            <Heading fontSize={[4]} slim>
+              People
+            </Heading>
+            <Heading level={6} fontSize={[2]} fontWeight={300}>
+              {/* <EntityNameLookup isLinked {...parent} styled={{sm: true, thin: true}}/> */}
+            </Heading>
+          </Flex>
           <Box>
-            
-          </Box>
-          <Box>
-            <ButtonFlat palette='green'>Add Person</ButtonFlat>
+            <ButtonFlat white >Issue Credential</ButtonFlat>
           </Box>
         </Flex>
-
-        <Flex between height='100%'>
-          <Flex column height='100%' gradient='turquoise' p={15} width={[1,1,1,0.25]}>
-            <FormPeopleSearch/>
-          </Flex>
-          <Flex  height='100%' width={[1,1,1,0.85]} p={0}>
-            <Flex column boxShadow={0} gradient='white' p={15} width={1}>
-              <PersonProfile address='0xfA67ddE98346d6033f3Da0b157b70fe8434a48cE'/>
-              <PersonProfile address='0xf9963dbe9438a5ecb62e5e7c2c081c3d12d48dd5'/>
-              <PersonProfile address='0x10f5d45854e038071485ac9e402308cf80d2d2fe'/>
-              <PersonProfile address='0x744e8d309413925cf8c31f6310a36f314d7bf18c'/>
-              <PersonProfile address='0xeb0c36406adf9081103987b1eaabd569c8898c01'/>
-              {/* <PersonProfile address='0x7e654d251da770a068413677967f6d3ea2fea9e4'/> */}
+      </Flex>
+      <Flex p={20} width={1} minHeight='calc(100% - 100px)'>
+        <Flex direction={['column', 'column', 'row']} width={1} >
+          <Flex width={[1,1,0.2]} flex={2} >
+            <Flex card column width={1} height='100%'>
+              <MenuSidebar items={[
+                {
+                  // icon: <IoIosContacts size={'1.2em'}/>,
+                  label: 'Active',
+                  to: '/dashboard/credentials',
+                },
+                {
+                  // icon: <IoIosFiling size={'1.2em'}/>,
+                  label: 'Types',
+                  to: '/dashboard/credentials/types',
+                },
+                {
+                  // icon: <IoMdTimer size={'1.2em'}/>,
+                  label: 'Issuer',
+                  to: '/dashboard/credentials/issue',
+                },
+                
+              ]} label={'Options'}/>
             </Flex>
+          </Flex>
+          <Flex flex={10} width={[1,1,0.8]} ml={[0,0, 30]}>
+            <Box width={1}>
+              <Routes/>
+            </Box>
           </Flex>
         </Flex>
       </Flex>
+      </>
     )
   }
 }
@@ -78,9 +100,9 @@ const mapStateToProps = (state, props) => ({
 
 });
 
+
 const mapDispatchToProps = (dispatch, props) => ({
 
 });
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(ClaimsSearch)
+export default connect(mapStateToProps, mapDispatchToProps)(Campaign)

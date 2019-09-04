@@ -3,7 +3,7 @@ import React from 'react'
  
 /* --- Local Dependencies --- */
 import { Flex, Span } from 'atoms'
-import { Web3Context } from 'contexts/Providers/Web3Wrapper'
+import { Web3Context } from 'context/Providers/Web3Wrapper'
 
 export default props =>
 <>

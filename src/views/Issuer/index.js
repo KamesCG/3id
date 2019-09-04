@@ -1,6 +1,6 @@
 /* --- Global Dependencies --- */
 import React from 'react'
-import Layout from "components/layout"
+import {Site} from "layout"
 import SEO from "components/seo"
 import stylesheet from 'theme/stylesheet.css'
 
@@ -49,7 +49,7 @@ class ClassComponent extends React.Component {
     // console.log(Content)
     return(
       <div>
-        <Layout>
+        <Site>
         <SEO title={name} />
         <Flex color='white' column center py={50}>
           <BackgroundGradient gradient='blue' />
@@ -63,7 +63,7 @@ class ClassComponent extends React.Component {
           <Container py={[20, 40, 60]} width={[1,1, 650]}>
             {body}
           </Container>
-        </Layout>
+        </Site>
       </div>
     )
   }

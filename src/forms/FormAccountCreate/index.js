@@ -49,6 +49,7 @@ const StateHandler = withStateHandlers(
 /* ------ Form Configuration ------ */
 const FormSettings = {
   handleSubmit: (values, { props, ...form }) => {
+    console.log('startin submit')
     // Construct account registration objects from submitted form values.
     const account = {
       email: values.email,
@@ -56,6 +57,7 @@ const FormSettings = {
     }
     // const accountRegisterAPI = `${process.env.APPLICATION_URL}${process.env.APPLICATION_REGISTER}`
     const accountRegisterAPI = 'http://localhost:8080/account/register'
+    console.log(accountRegisterAPI)
     // POST :: Send account registration details to backend API endpoint.
     fetch(accountRegisterAPI, {
       method: 'post',

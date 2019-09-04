@@ -1,9 +1,8 @@
 /* --- Global Dependencies --- */
 import React from 'react'
-import Layout from "components/layout"
-import SEO from "components/seo"
+import { SEO } from "components"
 import stylesheet from 'theme/stylesheet.css'
-
+import { Site } from 'layout'
 /* --- Local Dependencies --- */
 import { BackgroundImage, BackgroundGradient, Box, Flex, Image, Heading, Container  } from 'atoms'
 
@@ -54,7 +53,7 @@ class ClassComponent extends React.Component {
     // console.log(Content)
     return(
       <div>
-        <Layout>
+        <Site>
         <SEO title={Title} />
         <Flex column center py={50}>
           <BackgroundGradient gradient='blue' />
@@ -69,7 +68,7 @@ class ClassComponent extends React.Component {
             {Introduction}
           </Container>
         </Box>
-        </Layout>
+        </Site>
       </div>
     )
   }

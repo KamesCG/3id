@@ -1,0 +1,18 @@
+[
+    {
+        "path": "/account/",
+        "matchPath": "/account/*"
+    },
+    {
+        "path": "/dashboard/",
+        "matchPath": "/dashboard/*"
+    },
+    {
+        "path": "/issuers/",
+        "matchPath": "/issuers/*"
+    },
+    {
+        "path": "/profile/",
+        "matchPath": "/profile/*"
+    }
+]

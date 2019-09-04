@@ -1,92 +1,96 @@
 /* --- Global Dependencies --- */
 import idx from 'idx'
-import React from 'react'
+import React from "react";
 import { connect } from 'react-redux';
-import { Router } from '@reach/router'
-import PerfectScrollbar from 'react-perfect-scrollbar'
+
 /* --- Local Dependencies --- */
-import { Box, Button, ButtonFlat, Heading, Flex, Span } from 'atoms'
-import { Modal, Panel } from 'components'
-import { IssuersTable } from 'containers'
-import { FormIssuerCreate, FormVerifiableCredentialTemplate } from 'forms'
-import { MenuVerifiableCredentials } from 'views'
+import IssuerRoutes from 'routes/credentialsDashboard'
+import MenuItems from 'static/menus/issuers'
 import {
-  IssueClaims, Templates, TemplateCreate, Roles,
-  } from 'views'
-/* --- React Component --- */
-class OrganizationView extends React.Component {
+  BackgroundGradient, ButtonFlat,
+  Box, Flex, Heading, Span
+} from "atoms";
+import { MenuSidebar } from 'components'
+
+/* ------- Component ------- */
+class Campaign extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      name: "Verifiable Credentials",
-      isLoading: true
+      isLoading: false
     }
   }
-
+  
+  // Mounted
   componentDidMount()
   {
 
   }
-  
-  /* Will Update */
-  componentWillUpdate()
-  {
-
-  }
-
-  /* Did Update */
+  // Updated
   componentDidUpdate()
   {
 
   }
 
-  /* Will Mount */
-  componentWillUnmount()
-  {
-
+  // Error Catched
+  componentDidCatch() {
+    
   }
 
-
   render(){
-    return(
-      <Flex column  height='100%'>
-        <Flex align='center' between boxShadow={0} gradient='white' p={15}>
-          <Heading color='turquoise' fontSize={[3,3,4]} fontWeight={300} mb={0} >
-            {this.state.name}
-          </Heading>
+    const { isLoading } = this.state
+    return( 
+      isLoading
+      ? <Flex center column fill>Loading...</Flex>
+      :<>
+      <Flex column justifyCenter height={100}>
+        <BackgroundGradient gradient='blue' gradientDir={135} />
+        <Flex alignCenter between px={25}>
+          <Flex column color='white'>
+            <Heading fontSize={[4]} slim>
+              Credentials
+            </Heading>
+            <Heading level={6} fontSize={[2]} fontWeight={300}>
+              {/* <EntityNameLookup isLinked {...parent} styled={{sm: true, thin: true}}/> */}
+            </Heading>
+          </Flex>
           <Box>
-            
+            <ButtonFlat white >Issue Credential</ButtonFlat>
           </Box>
-          <Flex>
-            {/* <ButtonFlat palette='orange' ml={15}>Add Issuer</ButtonFlat> */}
-            <Panel modal={<FormVerifiableCredentialTemplate/>} >
-              <ButtonFlat children='Create Template' palette='green' ml={15}/>
-            </Panel>
-            <Panel modal={<FormIssuerCreate/>} >
-              <ButtonFlat children='Add Issuer' palette='orange' ml={15}/>
-            </Panel>
-          </Flex>
         </Flex>
-
-        <Flex between height='100%'>
-          <Flex column height='100%' gradient='turquoise' width={[1,1,1,0.15]}>
-            <MenuVerifiableCredentials/>
-          </Flex>
-          <Flex  height='100%' width={[1,1,1,0.85]} p={25}>
-            <Flex boxShadow={0} gradient='white' p={15} width={1}>
-            <PerfectScrollbar>
-              <Router>
-                <IssueClaims path="/issue" />
-                <Templates path="/templates" />
-                <TemplateCreate path="/templates/create" />
-                <FormVerifiableCredentialTemplate path="/template/create" />
-                <IssuersTable path="/issuers" />
-              </Router>
-              </PerfectScrollbar>
+      </Flex>
+      <Flex p={20} width={1} minHeight='calc(100% - 100px)'>
+        <Flex direction={['column', 'column', 'row']} width={1} >
+          <Flex width={[1,1,0.2]} flex={2} >
+            <Flex card column width={1} height='100%'>
+              <MenuSidebar items={[
+                {
+                  // icon: <IoIosContacts size={'1.2em'}/>,
+                  label: 'Active',
+                  to: '/dashboard/credentials',
+                },
+                {
+                  // icon: <IoIosFiling size={'1.2em'}/>,
+                  label: 'Types',
+                  to: '/dashboard/credentials/types',
+                },
+                {
+                  // icon: <IoMdTimer size={'1.2em'}/>,
+                  label: 'Issuer',
+                  to: '/dashboard/credentials/issue',
+                },
+                
+              ]} label={'Options'}/>
             </Flex>
+          </Flex>
+          <Flex flex={10} width={[1,1,0.8]} ml={[0,0, 30]}>
+            <Box width={1}>
+              <IssuerRoutes/>
+            </Box>
           </Flex>
         </Flex>
       </Flex>
+      </>
     )
   }
 }
@@ -96,8 +100,9 @@ const mapStateToProps = (state, props) => ({
 
 });
 
+
 const mapDispatchToProps = (dispatch, props) => ({
 
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(OrganizationView)
+export default connect(mapStateToProps, mapDispatchToProps)(Campaign)

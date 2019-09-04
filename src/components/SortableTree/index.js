@@ -4,7 +4,7 @@ import 'react-sortable-tree/style.css'; // This only needs to be imported once i
 import SortableTree, { toggleExpandedForAll, addNodeUnderParent, removeNodeAtPath, changeNodeAtPath } from 'react-sortable-tree';
 import './style.css'
 
-import { Box, ButtonFlat, Flex, Heading } from 'atoms'
+import { Box, ButtonFlat, Flex } from 'atoms'
 
 
 const maxDepth = 5;
@@ -17,55 +17,14 @@ const maxDepth = 5;
     searchString: '',
     searchFocusIndex: 0,
     searchFoundCount: null,
-    templateName: undefined,
-    templateDescription: undefined,
     treeData: [],
   }
 
   this.addBranchNode = this.addBranchNode.bind(this)
   this.addClaimNode = this.addClaimNode.bind(this)
   this.updateNode = this.updateNode.bind(this)
-  this.removeNode = this.removeNode.bind(this)
   
-  this.updateTitle = this.updateTitle.bind(this)
-  this.updateDescription = this.updateDescription.bind(this)
-  this.submitTemplate = this.submitTemplate.bind(this)
-}
-
-updateTitle(e) {
-  this.setState({
-    templateName: e.target.value
-  })
-}
-
-updateDescription(e) {
-  this.setState({
-    templateDescription: e.target.value
-  })
-}
-
-async submitTemplate(values) {
-  const Template = {
-    name: this.state.templateName,
-    description: this.state.templateDescription,
-    fields: ConverTreetoTemplate(this.state.treeData)
-  }
-
-  const endpoint = 'http://dapp.rapid-mesh.com/v1/vc/template'
-  window.fetch(endpoint, {
-    method: 'POST',
-    headers: {
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhmYTY3ZGRlOTgzNDZkNjAzM2YzZGEwYjE1N2I3MGZlODQzNGE0OGNlIiwibmFtZSI6InRlc3RuYW1lIiwiaWF0IjoxNTY3MDAyMjc1LCJleHAiOjE1NjgyMTE4NzUsImF1ZCI6Imh0dHA6Ly9kYXBwLnJhcGlkLW1lc2guY29tIiwiaXNzIjoiUmFwaWQiLCJzdWIiOiIweGZhNjdkZGU5ODM0NmQ2MDMzZjNkYTBiMTU3YjcwZmU4NDM0YTQ4Y2UifQ.NSEU_N93egm91HyeZgHO1wZHZW_Zx3gR-G9W61VLd9s',
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(Template)
-  })
-  .then( async res => {
-    console.log(res.headers)
-    const json = await res.json()
-    console.log(json)
-  })
+  this.removeNode = this.removeNode.bind(this)
 }
 
   handleTreeOnChange = treeData => {
@@ -188,19 +147,6 @@ async submitTemplate(values) {
         
         <Box flex={6}>
           <Box card height={'100%'}>
-            <div className="bar-wrapper">
-              <Flex between>
-                <button onClick={this.toggleNodeExpansion.bind(this, true)}>
-                  Expand all
-                </button>
-                <button
-                  className="collapse"
-                  onClick={this.toggleNodeExpansion.bind(this, false)}
-                >
-                  Collapse all
-                </button>
-              </Flex>
-            </div>
             <div className="tree-wrapper">
               <SortableTree
                 treeData={treeData}
@@ -313,33 +259,39 @@ async submitTemplate(values) {
           </Box>
         </Box>
         <Box flex={3} ml={25}>
-            <Box mb={25}>
-              <Heading fontSize={[4]} fontWeight={500}>
-                Create Template
-              </Heading>
-              <input type='text' placeholder='Name' onChange={this.updateTitle} />
-              <input type='text' placeholder='Description' onChange={this.updateDescription} />
-            </Box>
+            <div className="bar-wrapper">
+            <button onClick={this.toggleNodeExpansion.bind(this, true)}>
+              Expand all
+            </button>
+            <button
+              className="collapse"
+              onClick={this.toggleNodeExpansion.bind(this, false)}
+            >
+              Collapse all
+            </button>
+            <label>Search: </label>
+            <input onChange={this.handleSearchOnChange} />
+            <button className="previous" onClick={this.selectPrevMatch}>
+              Previous
+            </button>
+            <button className="next" onClick={this.selectNextMatch}>
+              Next
+            </button>
+            <label>
+              {searchFocusIndex} / {searchFoundCount}
+            </label>
+          </div>
           <Flex column>
-            <Flex between>
-              <ButtonFlat
-                onClick={this.addClaimNode}
-                lg flex={1}
-                palette='blue'>
-                  Add Claim
-              </ButtonFlat>
-              <ButtonFlat
-                  onClick={this.addBranchNode}
-                  lg flex={1}
-                  palette='blue'>
-                  Add Branch
-              </ButtonFlat>
-            </Flex>
+            <ButtonFlat
+              onClick={this.addClaimNode}
+              lg palette='blue'>
+                Add Claim Field
+            </ButtonFlat>
           <ButtonFlat
-              onClick={this.submitTemplate}
+              onClick={this.addBranchNode}
               mt={25}
               lg palette='green'>
-                Submit Template
+                Add Branch Field
             </ButtonFlat>
           </Flex>
           </Box>
@@ -393,56 +345,4 @@ const BranchMenu = {
       Remove Node
     </button>,
   ],
-}
-
-const ConverTreetoTemplate = treeData => {
-
-  return treeData.map( field => {
-    if(field.title === 'Field') {
-      return {
-        key: field.meta.key,
-        description: field.meta.description,
-        type: field.meta.type,
-      }
-    }
-    if(field.title === 'Branch') {
-      return {
-        key: field.meta.key,
-        description: field.meta.description,
-        type: field.meta.type,
-        children: ConverTreetoTemplate(field.children)
-      }
-    }
-  })
-
-}
-
-
-const ExampleTemplate = {
-  "name": "KamesCredentialTwo",
-  "description": "A Generic Kames Credential",
-  "fields": [
-    {
-      "key": "name",
-      "description": "The name of the receiver.",
-      "type": "String"
-    },
-    {
-      "key": "description",
-      "description": "The name of the credential.",
-      "type": "Object",
-      "children": [
-        {
-          "key": "title",
-          "description": "The Generic Credential title.",
-          "type": "String"
-        },
-        {
-          "key": "tagline",
-          "description": "The Generic Credential tagline.",
-          "type": "String"
-        }
-      ]
-    }
-  ]
 }

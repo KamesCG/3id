@@ -2,92 +2,78 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { withFormik } from 'formik';
-import { Form, Field, FieldArray, ErrorMessage } from 'formik';
+import { Form, ErrorMessage } from 'formik';
 
 /* --- Local Dependencies --- */
-import data from 'storeRedux/departments/data/actions'
-import { fromData } from 'storeRedux/departments/selectors'
-import { Button, Flex, HorizontalRule, Paragraph, Span } from 'atoms'
+import { fromDatabase } from 'store/departments/selectors'
+import { databaseWriteRequest, databaseReadRequest } from 'store/departments/actions'
+import { Button } from 'atoms'
 import { Input } from 'fields'
 
 /* --- React Component --- */
-class FormClass extends React.Component {
+class Formik extends React.Component {
   constructor(props){
     super(props)
     this.state = {}
-
   }
   
+  // Mounted
   componentDidMount()
   {
 
   }
-
-  /* Will Update */
-  componentWillUpdate()
-  {
-
-  }
-
-  /* Did Update */
+  // Updated
   componentDidUpdate()
   {
 
   }
 
-  /* Will Mount */
-  componentWillUnmount()
-  {
+  // Error Catched
+  componentDidCatch() {
     
   }
   
   /* Render */
   render(){
+    const { isValid, setFieldValue, setFieldTouched } = this.props
+    
     return(
       <Form onSubmit={this.props.handleSubmit} style={{width: '100%'}} >
-
+        
         <label>Name <ErrorMessage name="name" component="span" className="input-error" /></label>
         <Input type="text" name="name" />
-      
 
-        <Button type="submit" gradient='blue' disabled={this.props.isSubmitting} mt={15} width={1}>
-          Create Template
+        <Button pill type="submit" disabled={this.props.isSubmitting} mt={15} width={1}>
+          Submit
         </Button>
     </Form>
     )
   }
 }
 
-/* -- Global State -- */
+/* ------------------ */
+/*    GLOBAL STATE    */
+/* ------------------ */
 const mapStateToProps = (state, props) => ({
-  mutation: fromData.get(state,  ''),
+  write: fromDatabase.get(state,  ''),
 });
 
 
 const mapDispatchToProps = (dispatch, props) => ({
-  mutateRequest: (mutation) =>dispatch(data.mutateRequest('REQUEST')(
-    mutation,
-    {
+  save: (entity)=>dispatch(databaseWriteRequest({
+    payload: entity,
+    metadata: {
+      branch: [''],
       delta: '',
-    }
-  ))
+      writeType: 'create',
+    } 
+  })),
 });
 
-/* --- GraphQL --- */
-const MutationGenerate = ({ claims, description, name, type }) =>`
-mutation {
-  add
-  (
-    name:"${name}",
-  ) 
-  {
-    name
-  }
-}
-`
-
-/* --- Form Configuration --- */
-const FormTemplate = withFormik({
+/* ------------------ */
+/* Form Configuration */
+/* ------------------ */
+const FormikStateful = withFormik({
   /* Map Props to Field Values */
   mapPropsToValues: props => ({
     name: '',
@@ -102,9 +88,9 @@ const FormTemplate = withFormik({
 
   /* Handle Form Submission */
   handleSubmit: (values, { props, ...form }) => {
-    const Mutation = MutationGenerate(values)
-    props.mutateRequest(Mutation)
-  }
-})(FormClass)
 
-export default connect(mapStateToProps, mapDispatchToProps)(FormTemplate)
+
+  }
+})(Formik)
+
+export default connect(mapStateToProps, mapDispatchToProps)(FormikStateful)

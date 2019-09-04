@@ -1,5 +1,7 @@
 {
   "rules": {
-    "no-unused-vars": "off", // add this
+    "no-unused-vars": "off",
+    "jsx": true,
+    "modules": true
   }
 }

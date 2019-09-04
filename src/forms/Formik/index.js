@@ -14,26 +14,19 @@ class Formik extends React.Component {
     this.state = {}
   }
   
+  // Mounted
   componentDidMount()
   {
 
   }
-
-  /* Will Update */
-  componentWillUpdate()
-  {
-
-  }
-
-  /* Did Update */
+  // Updated
   componentDidUpdate()
   {
 
   }
 
-  /* Will Mount */
-  componentWillUnmount()
-  {
+  // Error Catched
+  componentDidCatch() {
     
   }
   
