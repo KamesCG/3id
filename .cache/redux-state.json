@@ -1440,48 +1440,14 @@
       "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2019-08-29T15:49:51.795Z",
+      "buildTime": "2019-09-02T10:40:55.524Z",
       "id": "Site",
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "a3154d4ce542d2b3ee484948457176f7",
+        "contentDigest": "631c78e3306d1cf435188e3a3c496a7c",
         "type": "Site",
         "owner": "internal-data-bridge"
-      }
-    },
-    "Issuer_1": {
-      "name": "Rapid",
-      "did": "did:eth:0x",
-      "url": "http://dapp.rapid-mesh.com",
-      "body": "Donec scelerisque tempor velit ut aliquam. Nullam finibus vulputate velit, non accumsan ligula semper in. Morbi dolor ex, sollicitudin ut purus ultrices, laoreet egestas tortor. Curabitur efficitur, justo laoreet gravida viverra, mauris augue aliquet tortor, at viverra est felis tempus ligula. Sed aliquet eros in hendrerit consectetur. Fusce viverra accumsan felis eu auctor. Nam volutpat et massa quis volutpat.",
-      "created_at": "2019-08-21T16:19:01.699Z",
-      "updated_at": "2019-08-21T16:19:01.704Z",
-      "strapiId": 1,
-      "id": "Issuer_1",
-      "parent": "__SOURCE__",
-      "children": [],
-      "internal": {
-        "type": "StrapiIssuer",
-        "contentDigest": "96429f959bcad9d48e20f13bf97b7948",
-        "owner": "gatsby-source-strapi"
-      }
-    },
-    "Documentation_1": {
-      "title": "What Is A Verifiable Credential",
-      "tagline": "A collection of cryptographically signed and verifiable information.",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed est erat. Morbi a semper enim, at accumsan risus. Nulla facilisi. Nulla semper erat vitae neque dictum, id placerat arcu eleifend. Sed ornare sodales sodales. Sed vulputate, est vitae rhoncus cursus, lorem sem rhoncus quam, ut eleifend metus tellus condimentum turpis. Suspendisse potenti. Morbi scelerisque urna lectus, a eleifend erat euismod eget. Nullam faucibus quis tellus vel scelerisque.\n\nCras lobortis neque vel auctor tincidunt. Pellentesque pharetra ante nec ex venenatis dictum. Ut sit amet sapien pulvinar, ultricies eros a, accumsan magna. Praesent ornare sed mauris vel tincidunt. Aliquam at elit eu libero scelerisque dapibus. Suspendisse et dui facilisis, imperdiet ipsum at, fringilla ex. Proin non malesuada leo, id ultrices erat. Proin sed ipsum ut neque iaculis maximus. Nam congue rutrum posuere. Donec tincidunt purus at libero efficitur tincidunt. In dictum sodales tortor, tincidunt consequat odio dapibus ac. Integer egestas arcu odio, non rhoncus libero tincidunt eu.\n\nPhasellus cursus justo nec arcu lacinia posuere. Nullam accumsan tellus nec libero ultrices, a varius turpis laoreet. Pellentesque placerat lobortis orci, nec efficitur augue vehicula quis. Donec elit justo, egestas tempus lacus vitae, dapibus vehicula leo. Phasellus id gravida odio, vel mattis arcu. Nulla bibendum tristique fringilla. Ut sapien mi, finibus eu enim non, dignissim tincidunt tortor.",
-      "alias": "what-is-a-verifiable-credential",
-      "created_at": "2019-08-27T15:35:27.055Z",
-      "updated_at": "2019-08-27T15:37:03.788Z",
-      "strapiId": 1,
-      "id": "Documentation_1",
-      "parent": "__SOURCE__",
-      "children": [],
-      "internal": {
-        "type": "StrapiDocumentation",
-        "contentDigest": "8775b7f4bfdd329f4fde7c3d3bcd324d",
-        "owner": "gatsby-source-strapi"
       }
     },
     "584bccbe-6ef9-5da2-8db5-b594d313f6ba": {
@@ -1489,7 +1455,7 @@
       "children": [],
       "parent": null,
       "internal": {
-        "contentDigest": "b77c5a3efcbb8b1e53457effedcdcd7f",
+        "contentDigest": "31be16c9c8338816341757307d65c8c3",
         "type": "Directory",
         "description": "Directory \"src/images\"",
         "owner": "gatsby-source-filesystem"
@@ -1501,7 +1467,7 @@
       "size": 128,
       "prettySize": "128 B",
       "modifiedTime": "2019-05-04T22:49:51.086Z",
-      "accessTime": "2019-08-29T15:49:54.749Z",
+      "accessTime": "2019-09-02T10:41:01.236Z",
       "changeTime": "2019-08-12T13:00:17.930Z",
       "birthTime": "2019-05-04T22:49:51.085Z",
       "root": "/",
@@ -1519,11 +1485,11 @@
       "blksize": 4194304,
       "ino": 8613273272,
       "blocks": 0,
-      "atimeMs": 1567093794748.9617,
+      "atimeMs": 1567420861236.0188,
       "mtimeMs": 1557010191086.4302,
       "ctimeMs": 1565614817930.2854,
       "birthtimeMs": 1557010191085.204,
-      "atime": "2019-08-29T15:49:54.749Z",
+      "atime": "2019-09-02T10:41:01.236Z",
       "mtime": "2019-05-04T22:49:51.086Z",
       "ctime": "2019-08-12T13:00:17.930Z",
       "birthtime": "2019-05-04T22:49:51.085Z"
@@ -1640,57 +1606,6 @@
         "contentDigest": "6d91c86c0fde632ba4cd01062fd9ccfa",
         "type": "ImageSharp",
         "owner": "gatsby-transformer-sharp"
-      }
-    },
-    "SitePage /issuer/Issuer_1": {
-      "jsonName": "issuer-issuer-1-af1",
-      "internalComponentName": "ComponentIssuerIssuer1",
-      "path": "/issuer/Issuer_1",
-      "component": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/views/Issuer/index.js",
-      "componentChunkName": "component---src-views-issuer-index-js",
-      "context": {
-        "id": "Issuer_1",
-        "name": "Rapid",
-        "did": "did:eth:0x",
-        "body": "Donec scelerisque tempor velit ut aliquam. Nullam finibus vulputate velit, non accumsan ligula semper in. Morbi dolor ex, sollicitudin ut purus ultrices, laoreet egestas tortor. Curabitur efficitur, justo laoreet gravida viverra, mauris augue aliquet tortor, at viverra est felis tempus ligula. Sed aliquet eros in hendrerit consectetur. Fusce viverra accumsan felis eu auctor. Nam volutpat et massa quis volutpat."
-      },
-      "pluginCreator___NODE": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
-      "pluginCreatorId": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
-      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/views/Issuer/index.js",
-      "id": "SitePage /issuer/Issuer_1",
-      "parent": null,
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "984a83f936845fafcbc4ed2d03aeba48",
-        "description": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /docs/what-is-a-verifiable-credential": {
-      "jsonName": "docs-what-is-a-verifiable-credential-aac",
-      "internalComponentName": "ComponentDocsWhatIsAVerifiableCredential",
-      "path": "/docs/what-is-a-verifiable-credential",
-      "component": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/views/Documentation/index.js",
-      "componentChunkName": "component---src-views-documentation-index-js",
-      "context": {
-        "id": "Documentation_1",
-        "alias": "what-is-a-verifiable-credential",
-        "title": "What Is A Verifiable Credential",
-        "tagline": "A collection of cryptographically signed and verifiable information.",
-        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed est erat. Morbi a semper enim, at accumsan risus. Nulla facilisi. Nulla semper erat vitae neque dictum, id placerat arcu eleifend. Sed ornare sodales sodales. Sed vulputate, est vitae rhoncus cursus, lorem sem rhoncus quam, ut eleifend metus tellus condimentum turpis. Suspendisse potenti. Morbi scelerisque urna lectus, a eleifend erat euismod eget. Nullam faucibus quis tellus vel scelerisque.\n\nCras lobortis neque vel auctor tincidunt. Pellentesque pharetra ante nec ex venenatis dictum. Ut sit amet sapien pulvinar, ultricies eros a, accumsan magna. Praesent ornare sed mauris vel tincidunt. Aliquam at elit eu libero scelerisque dapibus. Suspendisse et dui facilisis, imperdiet ipsum at, fringilla ex. Proin non malesuada leo, id ultrices erat. Proin sed ipsum ut neque iaculis maximus. Nam congue rutrum posuere. Donec tincidunt purus at libero efficitur tincidunt. In dictum sodales tortor, tincidunt consequat odio dapibus ac. Integer egestas arcu odio, non rhoncus libero tincidunt eu.\n\nPhasellus cursus justo nec arcu lacinia posuere. Nullam accumsan tellus nec libero ultrices, a varius turpis laoreet. Pellentesque placerat lobortis orci, nec efficitur augue vehicula quis. Donec elit justo, egestas tempus lacus vitae, dapibus vehicula leo. Phasellus id gravida odio, vel mattis arcu. Nulla bibendum tristique fringilla. Ut sapien mi, finibus eu enim non, dignissim tincidunt tortor."
-      },
-      "pluginCreator___NODE": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
-      "pluginCreatorId": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
-      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/views/Documentation/index.js",
-      "id": "SitePage /docs/what-is-a-verifiable-credential",
-      "parent": null,
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "0198a4c5570c7ceceb63a6a994d94549",
-        "description": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
-        "owner": "internal-data-bridge"
       }
     },
     "SitePage /404/": {
@@ -1875,9 +1790,11 @@
     },
     "connections": {
       "StrapiIssuer": [
+        null,
         null
       ],
       "StrapiDocumentation": [
+        null,
         null
       ]
     }
@@ -1900,18 +1817,6 @@
     "profile-2a3": "971/path---profile-2-a-3-b0c-NZuapzHg3X9TaN1iIixfv1W23E"
   },
   "components": {
-    "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/views/Issuer/index.js": {
-      "query": "",
-      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/views/Issuer/index.js"
-    },
-    "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/views/Documentation/index.js": {
-      "query": "",
-      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/views/Documentation/index.js"
-    },
-    "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/.cache/dev-404-page.js": {
-      "query": "",
-      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/.cache/dev-404-page.js"
-    },
     "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/404.js": {
       "query": "",
       "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/404.js"
@@ -1939,6 +1844,10 @@
     "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/token.js": {
       "query": "",
       "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/token.js"
+    },
+    "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/.cache/dev-404-page.js": {
+      "query": "",
+      "componentPath": "/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/.cache/dev-404-page.js"
     }
   },
   "staticQueryComponents": {

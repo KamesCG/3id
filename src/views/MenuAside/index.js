@@ -75,16 +75,6 @@ const Items = [
     icon: iconDirectory,
     to: '/dashboard/people'
   },
-  // {
-  //   label: 'Claim Issuance',
-  //   icon: iconCampaign,
-  //   to: '/dashboard/issue'
-  // },
-  // {
-  //   label: 'Claim Templates',
-  //   icon: iconCampaign,
-  //   to: '/dashboard/templates'
-  // },
   {
     label: 'Role Management',
     icon: iconDirectory,

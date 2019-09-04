@@ -10,18 +10,21 @@ export const Web3Context = React.createContext({
 });
 
 const networkRouting = async network => {
-  switch (network) {
-    case 'json':
-      return window.ethers.providers.json;
-    case 'test':
-      return window.ethers.providers.test;
-    case 'infura':
-      return window.ethers.providers.infura;
-    case 'metamask':
-      return await new ethers.providers.Web3Provider(window.web3.currentProvider);
-    default:
-      return await ethers.getDefaultProvider('rinkeby');
-
+  try {
+    switch (network) {
+      case 'json':
+        return window.ethers.providers.json;
+      case 'test':
+        return window.ethers.providers.test;
+      case 'infura':
+        return window.ethers.providers.infura;
+      case 'metamask':
+        return await new ethers.providers.Web3Provider(window.web3.currentProvider);
+      default:
+        return await ethers.getDefaultProvider('rinkeby');
+    }
+  } catch (error) {
+      
   }
 }
 
@@ -76,39 +79,40 @@ class Web3Wrapper extends React.Component {
   }
 
   async componentDidMount(){
-    console.log('loading web3')
     const provider = await networkRouting('metamask');
-    const signer = provider.getSigner();
-    const EmblemsContract = new ethers.Contract(Emblems.networks['4'].address, Emblems.abi, signer)
-    
-    // if (typeof window !== `undefined`) {
-      if(window.ethereum) {
-        this.state.setAddress('0xfA67ddE98346d6033f3Da0b157b70fe8434a48cE')
-        this.state.setNetwork(window.ethereum.networkVersion)
-      }
-
-      if(window.ethereum.isMetaMask) {
-        this.state.setMetaMaskInstalled(true)
-      }
-    // }
-
-    // Set Account Information
-    this.setState({
-      isEthereumEnabled: true,
-      provider: provider
-    })
-
-    // Smart Contract Initialization
-    this.setState({
-      contracts: {
-        Emblems: {
-          address: Emblems.networks['4'].address,
-          abi: Emblems.abi,
-          contract: EmblemsContract,
-          name: 'Emblems'
+    if(provider) {
+      const signer = provider.getSigner();
+      const EmblemsContract = new ethers.Contract(Emblems.networks['4'].address, Emblems.abi, signer)
+      
+      // if (typeof window !== `undefined`) {
+        if(window.ethereum) {
+          this.state.setAddress('0xfA67ddE98346d6033f3Da0b157b70fe8434a48cE')
+          this.state.setNetwork(window.ethereum.networkVersion)
         }
-      }
-    })
+
+        if(window.ethereum.isMetaMask) {
+          this.state.setMetaMaskInstalled(true)
+        }
+      // }
+
+      // Set Account Information
+      this.setState({
+        isEthereumEnabled: true,
+        provider: provider
+      })
+
+      // Smart Contract Initialization
+      this.setState({
+        contracts: {
+          Emblems: {
+            address: Emblems.networks['4'].address,
+            abi: Emblems.abi,
+            contract: EmblemsContract,
+            name: 'Emblems'
+          }
+        }
+      })
+    }
   }
 
   componentDidUpdate(prevProps) {

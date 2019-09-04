@@ -20,19 +20,9 @@
         "path": "/dev-404-page/"
     },
     {
-        "componentChunkName": "component---src-views-documentation-index-js",
-        "jsonName": "docs-what-is-a-verifiable-credential-aac",
-        "path": "/docs/what-is-a-verifiable-credential"
-    },
-    {
         "componentChunkName": "component---src-pages-identity-js",
         "jsonName": "identity-9ac",
         "path": "/identity/"
-    },
-    {
-        "componentChunkName": "component---src-views-issuer-index-js",
-        "jsonName": "issuer-issuer-1-af1",
-        "path": "/issuer/Issuer_1"
     },
     {
         "componentChunkName": "component---src-pages-profile-js",

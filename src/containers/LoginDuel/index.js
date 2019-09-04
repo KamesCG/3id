@@ -12,14 +12,13 @@ import { Popover } from 'components'
 import { LoginEthereum } from 'containers'
 
 import Profile from './profile'
-
 /* --- Component --- */
 class ClassComponent extends React.Component {
   constructor(props){
     super(props)
     if (typeof window !== `undefined`) {
       this.state = {
-        address: window.ethereum.selectedAddress
+        address: window.ethereum && window.ethereum.selectedAddress
       }
     } else {
       this.state = {
