@@ -6,7 +6,6 @@ const preferDefault = m => m && m.default || m
 
 exports.components = {
   "component---src-templates-documentation-index-js": hot(preferDefault(require("/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/templates/Documentation/index.js"))),
-  "component---cache-dev-404-page-js": hot(preferDefault(require("/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/.cache/dev-404-page.js"))),
   "component---src-pages-404-js": hot(preferDefault(require("/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/404.js"))),
   "component---src-pages-account-js": hot(preferDefault(require("/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/account.js"))),
   "component---src-pages-dashboard-js": hot(preferDefault(require("/Users/admin/Documents/projects/rapid/code/rapid-dapp-frontend/src/pages/dashboard.js"))),
